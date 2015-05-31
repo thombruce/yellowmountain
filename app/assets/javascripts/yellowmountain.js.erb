@@ -66,9 +66,9 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   function render() {
     requestAnimationFrame( render );
-    //mountain.rotation.y -= 0.002; // Preferred automatic rotation
     if(isMobile){
-      mountainwf.rotation.y -= 0.002; // Preferred automatic rotation ///// WIREFRAME
+      mountain.rotation.y -= 0.002; // Preferred automatic rotation
+      //mountainwf.rotation.y -= 0.002; // Preferred automatic rotation ///// WIREFRAME
     }else{
       mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0012 -1.3; // Moves according to mouse position.
       mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003; // Moves according to mouse position.
