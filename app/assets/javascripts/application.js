@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require three.min
+//= require DeviceOrientationControls
 //= require turbolinks
 //= require_tree .
