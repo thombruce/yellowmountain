@@ -35,7 +35,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   var planegeometry = new THREE.PlaneBufferGeometry(9, 1.34 );
   var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-transparent.png') %>");
   planetexture.minFilter = THREE.NearestFilter;
-  var planematerial = new THREE.MeshBasicMaterial( {map: planetexture, transparent: true} );
+  var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, map: planetexture, transparent: true} );
   var plane = new THREE.Mesh( planegeometry, planematerial );
   scene.add( plane );
 
