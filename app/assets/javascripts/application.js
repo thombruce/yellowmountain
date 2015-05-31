@@ -11,8 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//
+//= require bootstrap-sprockets
+//
 //= require three.min
-//= require DeviceOrientationControls
-//= require turbolinks
+//= require timepiece
 //= require_tree .
+//= require turbolinks
