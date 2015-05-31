@@ -1,4 +1,4 @@
-<style>body{padding:0;margin:0;}canvas{padding:0;margin:0;background:none;}</style>
+<style>body{background-color:#efefef;padding:0;margin:0;}canvas{padding:0;margin:0;background:none;}</style>
 
 
 #mountain{:style => 'width:100vw;height:40vh;'}
@@ -7,3 +7,9 @@
 
 
 // max-height as 75% of width
+
+
+/ New deal:
+
+/ You really would be better off loading the image outside of the WebGL layer - it has to make some nasty approximations with pixel values...
+/ We'd be better off meticulously repositioning to find the right position?
