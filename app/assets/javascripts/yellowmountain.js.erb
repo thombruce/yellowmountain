@@ -32,8 +32,9 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     //scene.add( mountainwf ); ///// WIREFRAME
   });
 
-  var planegeometry = new THREE.PlaneBufferGeometry(9, 1.34 );
-  var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-transparent.png') %>");
+  var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
+  var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-pw2.png') %>");
+  planetexture.magFilter = THREE.NearestFilter;
   planetexture.minFilter = THREE.NearestFilter;
   var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, map: planetexture, transparent: true} );
   var plane = new THREE.Mesh( planegeometry, planematerial );
