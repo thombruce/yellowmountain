@@ -10,8 +10,9 @@
     %meta{:property => 'og:image', :content => image_url('static_logo_temp.png')}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1'}
     = csrf_meta_tags
-    / body has 'data-no-turbolink' because... ugh. Logo isn't loading on other pages no matter what I try.
   %body{'data-no-turbolink' => true}
+    / body has 'data-no-turbolink' because... ugh. Logo isn't loading on other pages no matter what I try.
 
     = yield
