@@ -35,10 +35,12 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   });
 
   var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
-  var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-pw2.png') %>");
+  var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-pw2.png') %>", null, function(){
+    planematerial.opacity = 1;
+  });
   planetexture.magFilter = THREE.NearestFilter;
   planetexture.minFilter = THREE.NearestFilter;
-  var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, map: planetexture, transparent: true} );
+  var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, opacity:0, map: planetexture, transparent: true} );
   var plane = new THREE.Mesh( planegeometry, planematerial );
   scene2.add( plane );
 
