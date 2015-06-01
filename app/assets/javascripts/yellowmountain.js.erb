@@ -54,12 +54,10 @@ $(document).ready(function(){
   point.position.set( 16, 16, 16 );
   scene.add( point );
 
-
   camera.position.z = 3.2;
   camera.position.y = 0.5;
 
-
-        window.addEventListener( 'resize', onWindowResize, false );
+  window.addEventListener( 'resize', onWindowResize, false );
 
   function onWindowResize() {
 
@@ -92,8 +90,8 @@ $(document).ready(function(){
     //mountainwf.rotation.x = ( - mouseY - mountainwf.rotation.x ) * 0.0003; // Moves according to mouse position. ///// WIREFRAME
     //mountain.rotation.y -= 0.01; // debug rotation
     //mountainwf.rotation.y -= 0.01; // debug rotation ///// WIREFRAME
-    
-    //renderer.clear();
+
+    renderer.clear();
     renderer.render( scene, camera );
     renderer.clearDepth();
     renderer.render( scene2, camera );
