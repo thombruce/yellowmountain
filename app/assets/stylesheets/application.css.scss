@@ -7,3 +7,10 @@
 @import "font-awesome";
 
 @import "timepiece";
+
+.navbar{background-color:transparent;border:none;}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
