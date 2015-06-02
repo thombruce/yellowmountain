@@ -7,10 +7,10 @@ $(document).ready(function(){
 
   var scene = new THREE.Scene();
   var scene2 = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera( 55, window.innerWidth / document.getElementById("mountain").offsetHeight, 0.1, 1000 );
+  var camera = new THREE.PerspectiveCamera( 55, document.getElementById("mountain").offsetWidth / document.getElementById("mountain").offsetHeight, 0.1, 1000 );
 
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // debug rule - antialiasing is costly. Disable advised
-  renderer.setSize( window.innerWidth, document.getElementById("mountain").offsetHeight );
+  renderer.setSize( document.getElementById("mountain").offsetWidth, document.getElementById("mountain").offsetHeight );
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.autoClear = false;
   document.getElementById("mountain").appendChild( renderer.domElement );
@@ -61,10 +61,10 @@ $(document).ready(function(){
 
   function onWindowResize() {
 
-    camera.aspect = window.innerWidth / document.getElementById("mountain").offsetHeight;
+    camera.aspect = document.getElementById("mountain").offsetWidth / document.getElementById("mountain").offsetHeight;
     camera.updateProjectionMatrix();
 
-    renderer.setSize( window.innerWidth, document.getElementById("mountain").offsetHeight );
+    renderer.setSize( document.getElementById("mountain").offsetWidth, document.getElementById("mountain").offsetHeight );
 
     render();
 
@@ -90,6 +90,8 @@ $(document).ready(function(){
     //mountainwf.rotation.x = ( - mouseY - mountainwf.rotation.x ) * 0.0003; // Moves according to mouse position. ///// WIREFRAME
     //mountain.rotation.y -= 0.01; // debug rotation
     //mountainwf.rotation.y -= 0.01; // debug rotation ///// WIREFRAME
+    
+    camera.updateProjectionMatrix();
 
     renderer.clear();
     renderer.render( scene, camera );
