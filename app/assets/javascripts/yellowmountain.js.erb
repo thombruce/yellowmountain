@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // debug rule - antialiasing is costly. Disable advised
   renderer.setSize( document.getElementById("mountain").offsetWidth, document.getElementById("mountain").offsetHeight );
-  renderer.setPixelRatio( window.devicePixelRatio );
+  //renderer.setPixelRatio( window.devicePixelRatio );
   renderer.autoClear = false;
   document.getElementById("mountain").appendChild( renderer.domElement );
 
