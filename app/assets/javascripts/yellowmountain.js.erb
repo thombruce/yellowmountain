@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).load(function(){
 
   var isMobile = false; //initiate as false
   // device detection
@@ -90,8 +90,6 @@ $(document).ready(function(){
     //mountainwf.rotation.x = ( - mouseY - mountainwf.rotation.x ) * 0.0003; // Moves according to mouse position. ///// WIREFRAME
     //mountain.rotation.y -= 0.01; // debug rotation
     //mountainwf.rotation.y -= 0.01; // debug rotation ///// WIREFRAME
-    
-    camera.updateProjectionMatrix();
 
     renderer.clear();
     renderer.render( scene, camera );
