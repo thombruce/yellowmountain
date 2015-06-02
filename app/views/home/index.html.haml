@@ -1,29 +1,3 @@
-<style>body{background-color:#efefef;padding:0;margin:0;}canvas{padding:0;margin:0;background:none;}</style>
-
-
-.row
-  %a{:href => root_path}
-    #mountain{:style => 'width:100vw;height:40vh;'}
-    / TODO add fallback in js for canvas where WebGL unavailable - if else - and test to see how it looks
-.row.hidden
-  .navbar.navbar-static-top.navbar-default
-    .container-fluid.text-center
-      %ul.nav.navbar-nav
-        %li
-          %a{'href' => root_path} Home
-        %li
-          %a{'href' => root_path} About
-        %li
-          %a{'href' => root_path} Our Work
-        %li
-          %a{'href' => root_path} Contact
-        %li
-          %a{'href' => root_path} Blog
-    /= image_tag 'YellowMountainLogov2.png', :class => 'col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3'
-
-
-
-
-
 // New problem:
 // Turbolinks destroys our lovely three.js header. You have a fix for this in... timepiece. Integrate it.
+// Yeah, the timepiece fix does not work. No idea why. This is a more complex problem than I have yet solved.

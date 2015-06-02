@@ -8,6 +8,17 @@
 
 @import "timepiece";
 
+body{
+  background-color:#efefef;
+  padding:0;
+  margin:0;
+}
+canvas{
+  padding:0;
+  margin:0;
+  background:none;
+}
+
 .navbar{background-color:transparent;border:none;}
 .navbar .navbar-nav {
   display: inline-block;
