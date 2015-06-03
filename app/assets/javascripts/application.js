@@ -19,6 +19,7 @@
 //= require three.min
 //= require CanvasRenderer
 //= require Projector
+//= require Detector
 //= require timepiece
 //= require_tree .
 //= require turbolinks
