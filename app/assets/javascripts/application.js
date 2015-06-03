@@ -17,9 +17,12 @@
 //= require bootstrap-sprockets
 //
 //= require three.min
+//= require Detector
+//
+// Unused - consider removal : Canvas version looked poor and didn't show our text - likely a fix but not worth time
 //= require CanvasRenderer
 //= require Projector
-//= require Detector
+//
 //= require timepiece
 //= require_tree .
 //= require turbolinks

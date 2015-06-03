@@ -14,9 +14,13 @@
     = csrf_meta_tags
   %body{'data-no-turbolink' => true}
     / body has 'data-no-turbolink' because... ugh. Logo isn't loading on other pages no matter what I try.
-    .row
+    #header.row
       = render 'layouts/header'
     .row.hidden
       = render 'layouts/navbar'
-    .row
-      = yield
+    .row.hidden
+      .container-fluid
+        = yield
+    .row.text-center{:style => 'margin-top:100px;'}
+      %h3 Building Mountains
+      %h4 Come back soon.

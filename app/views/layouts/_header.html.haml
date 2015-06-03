@@ -1,7 +1,6 @@
+#header-background
+  = image_tag 'skyscape.png'
 %a{:href => root_path}
-  #mountain{:style => 'width:100vw;height:40vh;min-height:250px;'}
-    / min-hieght - it works conceptually, but what about when the image is shrunk on super-small devices?
-    / Suddenly the containing div is too tall for it.
-    / Solution? When scaled to 320 width, the height of our image is just shy of 250. Therefore 250 is a sane value. 
-    = image_tag 'static.png', :class => 'col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4', :style => 'min-width:320px;'
-  / TODO add fallback in js for canvas where WebGL unavailable - if else - and test to see how it looks
+  #mountain
+    .text-center.col-xs-10.col-xs-offset-1.col-sm-4.col-sm-offset-4.col-md-4.col-md-offset-4.col-lg-4.col-lg-offset-4
+      = image_tag 'static.png', :class => 'static-logo'

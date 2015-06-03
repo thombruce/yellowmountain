@@ -13,20 +13,42 @@ body{
   padding:0;
   margin:0;
 }
+.row{
+  margin-left:0;
+  margin-right:0;
+}
+
+
+//Header
+#header{
+  position:relative;
+  overflow:hidden;
+  padding-bottom:10px;
+}
+// Header / Background
+#header-background{
+  min-width:100vw;
+  min-height:250px;
+  position:absolute;
+  z-index:-1;
+  bottom:-100px;
+  left:0;
+}
+// Header / Logo
+#mountain{width:100vw;height:40vh;min-height:250px;}
+// min-height - it works conceptually, but what about when the image is shrunk on super-small devices? // Suddenly the containing div is too tall for it.
 canvas{
   padding:0;
   margin:0;
   background:none;
 }
+.static-logo{min-width:200px; width:100%; margin-top:50px;}
+// Solution? When scaled to 320 width, the height of our image is just shy of 250. Therefore 250 is a sane value for min-width above
 
+// Header / Navbar
 .navbar{background-color:transparent;border:none;}
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
   vertical-align: top;
-}
-
-.row{
-  margin-left:0;
-  margin-right:0;
 }
