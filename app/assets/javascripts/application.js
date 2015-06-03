@@ -17,6 +17,8 @@
 //= require bootstrap-sprockets
 //
 //= require three.min
+//= require CanvasRenderer
+//= require Projector
 //= require timepiece
 //= require_tree .
 //= require turbolinks
