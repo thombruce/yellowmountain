@@ -77,13 +77,13 @@ $(document).ready(function(){
 
 
     function onWindowResize() {
+      windowHalfX = window.innerWidth / 2; // Moves according to mouse position.
+      windowHalfY = window.innerHeight / 2; // Moves according to mouse position.
 
       camera.aspect = document.getElementById("mountain").offsetWidth / document.getElementById("mountain").offsetHeight;
       camera.updateProjectionMatrix();
 
       renderer.setSize( document.getElementById("mountain").offsetWidth, document.getElementById("mountain").offsetHeight );
-
-      render();
 
     }
     window.addEventListener( 'resize', onWindowResize, false ); // Had to move this and onDocumentMouseMove because Firefox needed them to be defined BEFORE they were used. No problem... Just... Yeah. I expect it has something to do with document ready.
