@@ -8,6 +8,11 @@
 
 @import "timepiece";
 
+*:focus, *:active {
+    outline: none !important;
+}
+// was just noticing highlighting in Firefox. Sources suggest removing outline from 'active', but it's removing it from 'focus' that does the trick.
+// This will mean some additional work, mind you, to support keyboard navigation for accessibility (even my bank don't support that; it's frustrating)
 body{
   background-color:#efefef;
   padding:0;
