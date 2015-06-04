@@ -82,12 +82,14 @@ $(document).ready(function(){
 
     function render() {
       requestAnimationFrame( render );
-      if(isMobile){
-        mountain.rotation.y -= 0.002; // Preferred automatic rotation
-        //mountainwf.rotation.y -= 0.002; // Preferred automatic rotation ///// WIREFRAME
-      }else{
-        mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3; // Moves according to mouse position.
-        mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003; // Moves according to mouse position.
+      if(mountain.rotation){
+        if(isMobile){
+          mountain.rotation.y -= 0.002; // Preferred automatic rotation
+          //mountainwf.rotation.y -= 0.002; // Preferred automatic rotation ///// WIREFRAME
+        }else{
+          mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3; // Moves according to mouse position.
+          mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003; // Moves according to mouse position.
+        }
       }
       //mountainwf.rotation.y = ( - mouseX - mountainwf.rotation.y ) * 0.0012 -1.3; // Moves according to mouse position. ///// WIREFRAME
       //mountainwf.rotation.x = ( - mouseY - mountainwf.rotation.x ) * 0.0003; // Moves according to mouse position. ///// WIREFRAME
