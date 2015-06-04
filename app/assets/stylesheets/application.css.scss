@@ -23,7 +23,7 @@ body{
 #header{
   position:relative;
   overflow:hidden;
-  padding-bottom:10px;
+  //padding-bottom:10px;
 }
 // Header / Background
 #header-background{
@@ -35,7 +35,7 @@ body{
   left:0;
 }
 // Header / Logo
-#mountain{width:100vw;height:40vh;min-height:250px;}
+#mountain{width:100vw;height:40vh;min-height:250px;margin-bottom:10px;}
 // min-height - it works conceptually, but what about when the image is shrunk on super-small devices? // Suddenly the containing div is too tall for it.
 canvas{
   padding:0;

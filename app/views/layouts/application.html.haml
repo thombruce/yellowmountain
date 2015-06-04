@@ -12,15 +12,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'}
     = csrf_meta_tags
-  %body{'data-no-turbolink' => true}
+  %body{'data-no-turbolink' => false}
     / body has 'data-no-turbolink' because... ugh. Logo isn't loading on other pages no matter what I try.
-    #header.row
-      = render 'layouts/header'
-    .row.hidden
-      = render 'layouts/navbar'
+    = render 'layouts/header'
     .row.hidden
       .container-fluid
         = yield
-    .row.text-center{:style => 'margin-top:100px;'}
+    .row.text-center.hidden{:style => 'margin-top:100px;'}
       %h3 Building Mountains
       %h4 Come back soon.
