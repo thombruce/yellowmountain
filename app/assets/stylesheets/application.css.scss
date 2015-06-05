@@ -40,7 +40,12 @@ body{
   left:0;
 }
 // Header / Logo
-#mountain{width:100vw;height:40vh;min-height:250px;margin-bottom:10px;}
+#mountain{
+  width:100vw;
+  //height:40vh; Set dynamically so that div-size is not for image placeholder.
+  //min-height:250px; Set dynamically so that div-size is not for image placeholder.
+  margin-bottom:10px;
+}
 // min-height - it works conceptually, but what about when the image is shrunk on super-small devices? // Suddenly the containing div is too tall for it.
 canvas{
   padding:0;
