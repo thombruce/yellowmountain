@@ -24,10 +24,12 @@ $(document).ready(function(){
     scene2 = new THREE.Scene();
     camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
 
-    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // debug rule - antialiasing is costly. Disable advised
-    renderer.setPixelRatio( window.devicePixelRatio ); // ALWAYS, ALWAYS, ALWAYS set this before setting the size... obviously. I mean duh.
-    renderer.setSize( WIDTH, HEIGHT );
-    renderer.autoClear = false;
+    if (!renderer){
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // debug rule - antialiasing is costly. Disable advised
+      renderer.setPixelRatio( window.devicePixelRatio ); // ALWAYS, ALWAYS, ALWAYS set this before setting the size... obviously. I mean duh.
+      renderer.setSize( WIDTH, HEIGHT );
+      renderer.autoClear = false;
+    }
     $('#mountain').html(renderer.domElement);
     //document.getElementById("mountain").appendChild( renderer.domElement );
 
