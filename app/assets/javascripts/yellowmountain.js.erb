@@ -2,6 +2,7 @@ var isMobile = false; //initiate as false
 var WIDTH, HEIGHT;
 var VIEW_ANGLE, ASPECT, NEAR, FAR;
 var camera, scene1, scene2, renderer;
+var rendered = false;
 
 function set_variables(){    
   // device detection
@@ -118,7 +119,10 @@ $(document).ready(function(){
       renderer.render( scene1, camera );
       renderer.clearDepth();
       renderer.render( scene2, camera );
+      rendered = true;
     }
-    render();
+    if(!rendered){
+      render();
+    }
   }
 })
