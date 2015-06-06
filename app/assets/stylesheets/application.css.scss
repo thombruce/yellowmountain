@@ -57,7 +57,7 @@ canvas{
 
 // Header / Navbar
 .navbar{background-color:transparent;border:none;}
-.navbar .navbar-nav {
+.navbar .navbar-nav, .navbar .navbar-text.temporary {
   display: inline-block;
   float: none;
   vertical-align: top;
