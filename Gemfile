@@ -43,7 +43,7 @@ gem "haml", '4.0.5'
 gem "haml-rails", '0.5.3', :group => :development
 
 gem "rails_12factor", :group => :production
-gem "unicorn", :group => :production
+gem "puma", :group => :production
 
 gem "kaminari", '0.15.1'
 gem "jquery-turbolinks", '2.0.2'
