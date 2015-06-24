@@ -23,21 +23,20 @@ body{
   margin-right:0;
 }
 
-
+// Background
+#background{
+  min-width:100vw;
+  min-height:100vh;
+  position:fixed;
+  z-index:-1;
+  bottom:0;
+  left:0;
+}
 //Header
 #header{
   position:relative;
   overflow:hidden;
   //padding-bottom:10px;
-}
-// Header / Background
-#header-background{
-  min-width:100vw;
-  min-height:250px;
-  position:absolute;
-  z-index:-1;
-  bottom:-100px;
-  left:0;
 }
 // Header / Logo
 #mountain{
