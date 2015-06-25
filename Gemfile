@@ -56,3 +56,14 @@ gem 'font-awesome-sass'
 
 gem "timepiece"
 gem "captains_log"
+
+## Copied from thombruce
+# User authentication and privileges
+# gem "devise"
+# gem "rolify"
+# gem "cancancan"
+# gem 'friendly_id'
+# gem 'paperclip'
+# gem 'paperclip-dropbox'
+# # gem 'chartkick'
+# gem 'mail_form'
