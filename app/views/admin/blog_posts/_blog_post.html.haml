@@ -1,0 +1,15 @@
+%article.post_admin
+  .col-xs-12
+    %h2
+      %a{:href => blog_post_path(blog_post.slug)}= blog_post.title
+    %h5
+      = blog_post.created_at.strftime("%B %d, %Y")
+      %small= link_to 'Edit', edit_admin_blog_post_path(blog_post)
+  .col-xs-12
+    - array = blog_post.body.scan(/(?:\<eval\>)(.*?)(?:\<\/eval\>)/)
+    - it = blog_post.body.gsub(/(?:\<eval\>)(.*?)(?:\<\/eval\>)/, "out_for_eval")
+    - @b = []
+    - array.each do |a|
+      - @b << eval(a[0])
+    - finito = it.gsub(/(out_for_eval)/).with_index { |match, i| "#{@b[i]}" }
+    ~ truncate(finito.html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', blog_post_path(blog_post.slug) }
