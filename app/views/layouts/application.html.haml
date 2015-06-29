@@ -15,7 +15,7 @@
   %body{'data-no-turbolink' => false}
     / body has 'data-no-turbolink' because... ugh. Logo isn't loading on other pages no matter what I try.
     = render 'layouts/header'
-    .row.hidden
+    .row
       .container-fluid
         = yield
     .row.text-center.hidden{:style => 'margin-top:100px;'}

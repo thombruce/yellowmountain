@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  require 'constraints/short_dispatcher'
+  devise_for :users, controllers: { registrations: "users/registrations" }
   namespace :admin do
     get '/' => 'dashboard#index'
   end
+  resources :users, only: [:index, :show]
+
+  match '/:id', to: Constraints::ShortDispatcher.new(self), :via => 'get', :as => 'vanity'
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
