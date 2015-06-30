@@ -4,9 +4,29 @@
 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
   .col-xs-12.col-sm-8.col-md-8
     .content-panel
-      %h1.yellowmountain.headline.text-center= timepiece('London')
+      .row
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            = timepiece('America/New_York')
+            %br/
+            %small.yellowmountain.headline New York
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            = timepiece('America/Los_Angeles')
+            %br/
+            %small.yellowmountain.headline Los Angeles
     .content-panel.bg-github
-      %h1.yellowmountain.headline.text-center= timepiece('London')
+      .row
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            = timepiece('London')
+            %br/
+            %small.yellowmountain.headline London
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            = timepiece('Stockholm')
+            %br/
+            %small.yellowmountain.headline Stockholm
     .content-panel.bg-white
       = render @blog_posts
       - if false
