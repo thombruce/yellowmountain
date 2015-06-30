@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :blog_posts, :dependent => :destroy
+  has_many :pages, :dependent => :destroy
 
   def should_generate_new_friendly_id?
     slug.blank? || username_changed?

@@ -1,0 +1,9 @@
+%article.post
+  .col-xs-12
+    %h2.headline.yellowmountain
+      %a{:href => vanity_path(page.slug)}= page.title
+  .col-xs-12
+    - if params[:controller] == 'pages'
+      ~ captains_log(page.body).html_safe
+    - else
+      ~ truncate(captains_log(page.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(page.slug) }

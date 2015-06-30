@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :blog_posts, only: [:index, :new, :edit, :create, :update, :destroy]
+    resources :pages, only: [:index, :new, :edit, :create, :update, :destroy]
     get '/' => 'dashboard#index'
   end
   resources :users, only: [:index, :show]
   resources :blog_posts, path: 'blog', only: [:index, :show]
+  resources :pages, only: [:index, :show]
 
   match '/:id', to: Constraints::ShortDispatcher.new(self), :via => 'get', :as => 'vanity'
   root 'home#index'

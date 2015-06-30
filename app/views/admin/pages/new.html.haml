@@ -1,0 +1,24 @@
+%h1 Page
+%div
+  = form_for([:admin, @page]) do |f|
+
+    .col-sm-9
+
+      = f.hidden_field :user_id, :value => current_user.id
+
+      %br/
+      = f.label :title
+      = f.text_field :title, :class => 'form-control'
+
+      %br/
+      = f.label :slug
+      = f.text_field :slug_candidate, :class => 'form-control'
+
+      %br/
+
+      = f.label :body
+      = f.text_area :body, :class => 'form-control', :rows => '20'
+      
+      %br/
+
+      = f.submit "Publish", class: "button"

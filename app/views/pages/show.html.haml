@@ -1,0 +1,12 @@
+- content_for :meta_tags do
+  %title= @page.title + ' | Yellow Mountain'
+  %meta{:property => 'og:title', :content => @page.title}
+  %meta{:property => 'og:type', :content => 'article'}
+  %meta{:property => 'og:url', :content => vanity_url(@page.slug)}
+  %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
+.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.content-panel
+  %article.post
+    .col-xs-12
+      %h2.headline.yellowmountain= @page.title
+    .col-xs-12
+      ~ captains_log(@page.body).html_safe

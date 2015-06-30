@@ -4,11 +4,11 @@
       %li
         %a{'href' => root_path, 'title' => 'page and content'} Home
       %li
-        %a{'href' => root_path, 'title' => 'page and users'} About
+        %a{'href' => vanity_path('about'), 'title' => 'page and users'} About
       %li
-        %a{'href' => root_path, 'title' => 'content'} Our Work
+        %a{'href' => vanity_path('our-work'), 'title' => 'content'} Our Work
       %li
-        %a{'href' => root_path, 'title' => 'page'} Contact
+        %a{'href' => vanity_path('contact'), 'title' => 'page'} Contact
       %li
         %a{'href' => blog_posts_path, 'title' => 'content'} Blog
     .nav.navbar-text.temporary.hidden
