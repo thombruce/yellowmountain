@@ -1,6 +1,6 @@
 .navbar.navbar-static-top.navbar-default
   .container-fluid.text-center
-    %ul.nav.navbar-nav.hidden
+    %ul.nav.navbar-nav
       %li
         %a{'href' => root_path, 'title' => 'page and content'} Home
       %li
@@ -10,6 +10,6 @@
       %li
         %a{'href' => root_path, 'title' => 'page'} Contact
       %li
-        %a{'href' => root_path, 'title' => 'content'} Blog
-    .nav.navbar-text.temporary
+        %a{'href' => blog_posts_path, 'title' => 'content'} Blog
+    .nav.navbar-text.temporary.hidden
       Building Mountains. Come back soon.

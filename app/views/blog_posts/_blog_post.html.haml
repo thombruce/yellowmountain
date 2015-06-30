@@ -1,0 +1,10 @@
+%article.post
+  .col-xs-12
+    %h2.headline.yellowmountain
+      %a{:href => vanity_path(blog_post.slug)}= blog_post.title
+    %h5= blog_post.created_at.strftime("%B %d, %Y")
+  .col-xs-12
+    - if params[:controller] == 'blog_posts'
+      ~ captains_log(blog_post.body).html_safe
+    - else
+      ~ truncate(captains_log(blog_post.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(blog_post.slug) }

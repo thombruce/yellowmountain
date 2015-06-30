@@ -1,13 +1,16 @@
 !!!
 %html
   %head
-    %title Yellow Mountain
-    %meta{:name => 'description', :content => "We build awesome web applications."}
-    %meta{:property => 'og:title', :content => 'Yellow Mountain'}
-    %meta{:property => 'og:description', :content => 'We build awesome web applications.'}
-    %meta{:property => 'og:type', :content => 'website'}
-    %meta{:property => 'og:url', :content => 'http://yellowmountain.io/'}
-    %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
+    - if content_for? :meta_tags
+      = yield :meta_tags
+    - else
+      %title Yellow Mountain
+      %meta{:name => 'description', :content => "We build awesome web applications."}
+      %meta{:property => 'og:title', :content => 'Yellow Mountain'}
+      %meta{:property => 'og:description', :content => 'We build awesome web applications.'}
+      %meta{:property => 'og:type', :content => 'website'}
+      %meta{:property => 'og:url', :content => 'http://yellowmountain.io/'}
+      %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'}

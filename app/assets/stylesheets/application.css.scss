@@ -8,6 +8,8 @@
 
 @import "timepiece";
 
+@import "colors";
+
 *:focus, *:active {
     outline: none !important;
 }
@@ -16,6 +18,7 @@
 body{
   background-color:#efefef;
   padding:0;
+  padding-bottom:50px;
   margin:0;
 }
 .row{
@@ -24,9 +27,9 @@ body{
 }
 
 .content-panel{
-  //border: 1px solid #ddd;
-  //background-color:#eee;
-  //box-shadow: 2px 2px 5px 1px #bbb;
+  border: 1px solid $silver;
+  background-color:#efefef;
+  box-shadow: 3px 3px 5px 1px #bbb;
 }
 
 // Background
@@ -67,3 +70,5 @@ canvas{
   float: none;
   vertical-align: top;
 }
+
+.headline{font-weight:100;}
