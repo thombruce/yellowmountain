@@ -32,8 +32,8 @@
         %h2.black.headline Client sign in
         = form_tag session_path(:user) do
           .form-group
-            %label{:for => 'login-email-input'} Email
-            = text_field_tag 'user[email]', '', {:class => 'form-control', :id => 'login-email-input'}
+            %label{:for => 'login-login-input'} Login
+            = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
           .form-group
             %label{:for => 'login-password-input'} Password
             = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}

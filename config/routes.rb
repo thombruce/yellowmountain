@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   require 'constraints/short_dispatcher'
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
   namespace :admin do
     resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :blog_posts, only: [:index, :new, :edit, :create, :update, :destroy]
