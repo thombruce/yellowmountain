@@ -1,6 +1,49 @@
 // New problem:
 // Turbolinks destroys our lovely three.js header. You have a fix for this in... timepiece. Integrate it.
 // Yeah, the timepiece fix does not work. No idea why. This is a more complex problem than I have yet solved.
-.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.content-panel
-
-  = render @blog_posts
+.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+  .col-xs-12.col-sm-8.col-md-8
+    .content-panel
+      %h1.yellowmountain.headline.text-center= timepiece('London')
+    .content-panel.bg-github
+      %h1.yellowmountain.headline.text-center= timepiece('London')
+    .content-panel.bg-white
+      = render @blog_posts
+      - if false
+        %br/
+        - @vanity_urls = VanityUrl.all
+        - @vanity_urls.each do |vanity_url|
+          = vanity_url.slug
+        %br/
+        - Rails.application.routes.routes.each do |route|
+          = route.path.spec.to_s
+  .col-xs-12.col-sm-4.col-md-4
+    .content-panel.bg-yellowmountain
+      - if user_signed_in?
+        %h2.black.headline
+          Hi,
+          = current_user.username
+        .small.text-center{:style => 'padding-top:15px;'}
+          %p
+            = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+            %span.github= '|'
+            = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
+      - else
+        %h2.black.headline Client sign in
+        = form_tag session_path(:user) do
+          .form-group
+            %label{:for => 'login-email-input'} Email
+            = text_field_tag 'user[email]', '', {:class => 'form-control', :id => 'login-email-input'}
+          .form-group
+            %label{:for => 'login-password-input'} Password
+            = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
+          .checkbox
+            %label
+              = check_box_tag 'user[remember_me]'
+              Remember me
+          %button.btn.btn-default{:type => 'submit'} Sign in
+          .small.text-center{:style => 'padding-top:15px;'}
+            %p
+              = link_to "New user", new_registration_path(:user), :class => 'github'
+              %span.github= '|'
+              = link_to "Forgot your password?", new_password_path(:user), :class => 'github'

@@ -1,9 +1,9 @@
 %article.post
-  .col-xs-12
+  .row
     %h2.headline.yellowmountain
       %a{:href => vanity_path(blog_post.slug)}= blog_post.title
     %h5= blog_post.created_at.strftime("%B %d, %Y")
-  .col-xs-12
+  .row
     - if params[:controller] == 'blog_posts'
       ~ captains_log(blog_post.body).html_safe
     - else

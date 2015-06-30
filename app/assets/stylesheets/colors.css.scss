@@ -39,37 +39,37 @@ $yellowmountain: #efc918;
 /* SKINS */
 
 // Backgrounds
-.bg-navy {    background-color: $navy !important; }
-.bg-blue {    background-color: $blue !important; }
-.bg-aqua {    background-color: $aqua !important; }
-.bg-teal {    background-color: $teal !important; }
-.bg-olive {   background-color: $olive !important; }
-.bg-green {   background-color: $green !important; }
-.bg-lime {    background-color: $lime !important; }
-.bg-yellow {  background-color: $yellow !important; }
-.bg-orange {  background-color: $orange !important; }
-.bg-red {     background-color: $red !important; }
-.bg-fuchsia { background-color: $fuchsia !important; }
-.bg-cerise { background-color: $cerise !important; }
-.bg-purple {  background-color: $purple !important; }
-.bg-maroon {  background-color: $maroon !important; }
-.bg-white {   background-color: $white !important; }
-.bg-gray {    background-color: $gray !important; }
-.bg-silver {  background-color: $silver !important; }
-.bg-black {   background-color: $black !important; }
+.bg-navy {    background-color: $navy !important; border-color: darken($navy, 5%) !important; }
+.bg-blue {    background-color: $blue !important; border-color: darken($blue, 5%) !important; }
+.bg-aqua {    background-color: $aqua !important; border-color: darken($aqua, 5%) !important; }
+.bg-teal {    background-color: $teal !important; border-color: darken($teal, 5%) !important; }
+.bg-olive {   background-color: $olive !important; border-color: darken($olive, 5%) !important; }
+.bg-green {   background-color: $green !important; border-color: darken($green, 5%) !important; }
+.bg-lime {    background-color: $lime !important; border-color: darken($lime, 5%) !important; }
+.bg-yellow {  background-color: $yellow !important; border-color: darken($yellow, 5%) !important; }
+.bg-orange {  background-color: $orange !important; border-color: darken($orange, 5%) !important; }
+.bg-red {     background-color: $red !important; border-color: darken($red, 5%) !important; }
+.bg-fuchsia { background-color: $fuchsia !important; border-color: darken($fuchsia, 5%) !important; }
+.bg-cerise { background-color: $cerise !important; border-color: darken($cerise, 5%) !important; }
+.bg-purple {  background-color: $purple !important; border-color: darken($purple, 5%) !important; }
+.bg-maroon {  background-color: $maroon !important; border-color: darken($maroon, 5%) !important; }
+.bg-white {   background-color: $white !important; border-color: darken($white, 5%) !important; }
+.bg-gray {    background-color: $gray !important; border-color: darken($gray, 5%) !important; }
+.bg-silver {  background-color: $silver !important; border-color: darken($silver, 5%) !important; }
+.bg-black {   background-color: $black !important; border-color: $black !important; }
 
-.bg-facebook {   background-color: $facebook !important; }
-.bg-twitter {    background-color: $twitter !important; }
-.bg-youtube {    background-color: $youtube !important; }
-.bg-linkedin {   background-color: $linkedin !important; }
-.bg-github {     background-color: $github !important; }
+.bg-facebook {   background-color: $facebook !important; border-color: darken($facebook, 5%) !important; }
+.bg-twitter {    background-color: $twitter !important; border-color: darken($twitter, 5%) !important; }
+.bg-youtube {    background-color: $youtube !important; border-color: darken($youtube, 5%) !important; }
+.bg-linkedin {   background-color: $linkedin !important; border-color: darken($linkedin, 5%) !important; }
+.bg-github {     background-color: $github !important; border-color: darken($github, 5%) !important; }
 
-.bg-javascript {   background-color: $javascript !important; }
-.bg-rubyonrails {    background-color: $rubyonrails !important; }
-.bg-rubylang {    background-color: $ruby !important; }
-.bg-php {   background-color: $php !important; }
+.bg-javascript {   background-color: $javascript !important; border-color: darken($javascript, 5%) !important; }
+.bg-rubyonrails {    background-color: $rubyonrails !important; border-color: darken($rubyonrails, 5%) !important; }
+.bg-rubylang {    background-color: $ruby !important; border-color: darken($ruby, 5%) !important; }
+.bg-php {   background-color: $php !important; border-color: darken($php, 5%) !important; }
 
-.bg-yellowmountain {   background-color: $yellowmountain !important; }
+.bg-yellowmountain {   background-color: $yellowmountain !important; border-color: darken($yellowmountain, 5%) !important; }
 
 // Colors
 .navy {       color: $navy !important; }
