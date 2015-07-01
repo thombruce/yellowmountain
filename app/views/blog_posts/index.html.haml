@@ -1,2 +1,5 @@
 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.content-panel
-  = render @blog_posts
+  - if @blog_posts.empty?
+    %h2.headline.yellowmountain No Posts
+  - else
+    = render @blog_posts

@@ -39,27 +39,32 @@
           %h1.yellowmountain.headline.text-center
             Welcome to Yellow Mountain
             %br/
-            %small.yellowmountain.headline Enquire about our introductory offers.
+            %small.yellowmountain.headline
+              = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
     .content-panel.bg-github
       .row
         .col-xs-6
           %h1.yellowmountain.headline.text-center
-            Open for business
+            - if Time.now.hour > 10 && Time.now.hour < 18
+              Open for business
+            - else
+              = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
         .col-xs-6
           %h1.yellowmountain.headline.text-center
             = timepiece('London')
             %br/
             %small.yellowmountain.headline Carlisle, UK
-    .content-panel.bg-white
-      = render @blog_posts
-      - if false
-        %br/
-        - @vanity_urls = VanityUrl.all
-        - @vanity_urls.each do |vanity_url|
-          = vanity_url.slug
-        %br/
-        - Rails.application.routes.routes.each do |route|
-          = route.path.spec.to_s
+    - unless @blog_posts.empty?
+      .content-panel.bg-white
+        = render @blog_posts
+        - if false
+          %br/
+          - @vanity_urls = VanityUrl.all
+          - @vanity_urls.each do |vanity_url|
+            = vanity_url.slug
+          %br/
+          - Rails.application.routes.routes.each do |route|
+            = route.path.spec.to_s
   .hidden-xs.col-sm-4.col-md-4
     .content-panel.bg-yellowmountain
       - if user_signed_in?

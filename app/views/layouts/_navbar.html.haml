@@ -2,13 +2,16 @@
   .container-fluid.text-center
     %ul.nav.navbar-nav
       %li
-        %a{'href' => root_path, 'title' => 'page and content'} Home
-      %li
-        %a{'href' => vanity_path('about'), 'title' => 'page and users'} About
-      %li
-        %a{'href' => vanity_path('our-work'), 'title' => 'content'} Our Work
-      %li
-        %a{'href' => vanity_path('contact'), 'title' => 'page'} Contact
+        %a{'href' => root_path, 'title' => 'Home'} Home
+      - unless Page.where(:slug => 'about').empty?
+        %li
+          %a{'href' => vanity_path('about'), 'title' => 'About Us'} About
+      - unless Page.where(:slug => 'our-work').empty?
+        %li
+          %a{'href' => vanity_path('our-work'), 'title' => 'Our Work'} Our Work
+      - unless Page.where(:slug => 'contact').empty?
+        %li
+          %a{'href' => vanity_path('contact'), 'title' => 'Contact Us'} Contact
       %li
         %a{'href' => blog_posts_path, 'title' => 'content'} Blog
     .nav.navbar-text.temporary.hidden
