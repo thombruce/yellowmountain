@@ -38,9 +38,10 @@
         .col-xs-12
           %h1.yellowmountain.headline.text-center
             Welcome to Yellow Mountain
-            %br/
-            %small.yellowmountain.headline
-              = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
+            - unless Page.where(:slug => 'contact').empty?
+              %br/
+              %small.yellowmountain.headline
+                = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
     .content-panel.bg-github
       .row
         .col-xs-6
@@ -48,7 +49,10 @@
             - if Time.now.hour > 10 && Time.now.hour < 18
               Open for business
             - else
-              = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
+              - if Page.where(:slug => 'contact').empty?
+                Building Mountains
+              - else
+                = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
         .col-xs-6
           %h1.yellowmountain.headline.text-center
             = timepiece('London')
