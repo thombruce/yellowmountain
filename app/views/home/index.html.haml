@@ -2,6 +2,36 @@
 // Turbolinks destroys our lovely three.js header. You have a fix for this in... timepiece. Integrate it.
 // Yeah, the timepiece fix does not work. No idea why. This is a more complex problem than I have yet solved.
 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+  .visible-xs-block.col-xs-12
+    .content-panel.bg-yellowmountain
+      - if user_signed_in?
+        %h2.black.headline
+          Hi,
+          = current_user.username
+        .small.text-center{:style => 'padding-top:15px;'}
+          %p
+            = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+            %span.github= '|'
+            = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
+      - else
+        %h2.black.headline Client sign in
+        = form_tag session_path(:user) do
+          .form-group
+            %label{:for => 'login-login-input'} Login
+            = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
+          .form-group
+            %label{:for => 'login-password-input'} Password
+            = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
+          .checkbox
+            %label
+              = check_box_tag 'user[remember_me]'
+              Remember me
+          %button.btn.btn-default{:type => 'submit'} Sign in
+          .small.text-center{:style => 'padding-top:15px;'}
+            %p
+              = link_to "New user", new_registration_path(:user), :class => 'github'
+              %span.github= '|'
+              = link_to "Forgot your password?", new_password_path(:user), :class => 'github'
   .col-xs-12.col-sm-8.col-md-8
     .content-panel
       .row
@@ -37,7 +67,7 @@
         %br/
         - Rails.application.routes.routes.each do |route|
           = route.path.spec.to_s
-  .col-xs-12.col-sm-4.col-md-4
+  .hidden-xs.col-sm-4.col-md-4
     .content-panel.bg-yellowmountain
       - if user_signed_in?
         %h2.black.headline
