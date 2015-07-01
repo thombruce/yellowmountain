@@ -35,28 +35,21 @@
   .col-xs-12.col-sm-8.col-md-8
     .content-panel
       .row
-        .col-xs-6
+        .col-xs-12
           %h1.yellowmountain.headline.text-center
-            = timepiece('America/New_York')
+            Welcome to Yellow Mountain
             %br/
-            %small.yellowmountain.headline New York
-        .col-xs-6
-          %h1.yellowmountain.headline.text-center
-            = timepiece('America/Los_Angeles')
-            %br/
-            %small.yellowmountain.headline Los Angeles
+            %small.yellowmountain.headline Enquire about our introductory offers.
     .content-panel.bg-github
       .row
         .col-xs-6
           %h1.yellowmountain.headline.text-center
-            = timepiece('London')
-            %br/
-            %small.yellowmountain.headline London
+            Open for business
         .col-xs-6
           %h1.yellowmountain.headline.text-center
-            = timepiece('Stockholm')
+            = timepiece('London')
             %br/
-            %small.yellowmountain.headline Stockholm
+            %small.yellowmountain.headline Carlisle, UK
     .content-panel.bg-white
       = render @blog_posts
       - if false
