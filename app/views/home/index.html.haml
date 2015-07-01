@@ -44,20 +44,24 @@
                 = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
     .content-panel.bg-github
       .row
-        .col-xs-6
-          %h1.yellowmountain.headline.text-center
-            - if Time.now.hour > 10 && Time.now.hour < 18
-              Open for business
-            - else
-              - if Page.where(:slug => 'contact').empty?
-                Building Mountains
+        - if Page.where(:slug => 'contact').empty?
+          .col-xs-12
+            %h1.yellowmountain.headline.text-center
+              Building Mountains
+              %br/
+              %small.yellowmountain.headline Come back soon
+        - else
+          .col-xs-6
+            %h1.yellowmountain.headline.text-center
+              - if Time.now.hour > 10 && Time.now.hour < 18
+                Open for business
               - else
                 = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
-        .col-xs-6
-          %h1.yellowmountain.headline.text-center
-            = timepiece('London')
-            %br/
-            %small.yellowmountain.headline Carlisle, UK
+          .col-xs-6
+            %h1.yellowmountain.headline.text-center
+              = timepiece('London')
+              %br/
+              %small.yellowmountain.headline Carlisle, UK
     - unless @blog_posts.empty?
       .content-panel.bg-white
         = render @blog_posts
