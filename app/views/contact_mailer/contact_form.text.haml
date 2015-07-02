@@ -1,7 +1,5 @@
-ContactMailer#contact_form
-
-= @greeting + ", find me in app/views/contact_mailer/contact_form.text.haml"
-
-= @email.name
-= @email.email
+= @greeting
+= "From:" + @email.name
+= "Email:" + @email.email
+Message:
 = @email.message
