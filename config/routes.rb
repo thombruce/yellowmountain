@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :blog_posts, path: 'blog', only: [:index, :show]
   resources :pages, only: [:index, :show]
 
+  match '/contact', to: 'contact#create', :via => 'post', :as => 'emails'
+
   match '/:id', to: Constraints::ShortDispatcher.new(self), :via => 'get', :as => 'vanity'
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

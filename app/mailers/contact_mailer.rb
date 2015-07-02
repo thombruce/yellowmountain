@@ -5,9 +5,10 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.contact_form.subject
   #
-  def contact_form
+  def contact_form(email)
     @greeting = "You have a new query"
+    @email = email
 
-    mail to: "thom@yellowmountain.io"
+    mail to: "thom@yellowmountain.io", from: email.email, subject: email.subject
   end
 end
