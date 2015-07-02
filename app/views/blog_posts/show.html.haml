@@ -4,10 +4,13 @@
   %meta{:property => 'og:type', :content => 'article'}
   %meta{:property => 'og:url', :content => vanity_url(@blog_post.slug)}
   %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
-.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.content-panel
-  %article.post
-    .col-xs-12
-      %h2.headline.yellowmountain= @blog_post.title
-      %h5= @blog_post.created_at.strftime("%B %d, %Y")
-    .col-xs-12
-      ~ captains_log(@blog_post.body).html_safe
+.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+  .col-xs-12
+    .content-panel.bg-white
+      %article.post
+        %h2.headline.yellowmountain= @blog_post.title
+        %h5
+          = @blog_post.created_at.strftime("%B %d, %Y")
+          %small by
+          = link_to @blog_post.user.username, vanity_path(@blog_post.user.slug), :class => 'black'
+        ~ captains_log(@blog_post.body).html_safe

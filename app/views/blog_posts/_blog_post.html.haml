@@ -1,13 +1,11 @@
 %article.post
-  .row
-    %h2.headline.yellowmountain
-      %a{:href => vanity_path(blog_post.slug)}= blog_post.title
-    %h5
-      = blog_post.created_at.strftime("%B %d, %Y")
-      %small by
-      = link_to blog_post.user.username, vanity_path(blog_post.user.slug), :class => 'black'
-  .row
-    - if params[:controller] == 'blog_posts'
-      ~ captains_log(blog_post.body).html_safe
-    - else
-      ~ truncate(captains_log(blog_post.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(blog_post.slug) }
+  %h2.headline.yellowmountain
+    %a{:href => vanity_path(blog_post.slug)}= blog_post.title
+  %h5
+    = blog_post.created_at.strftime("%B %d, %Y")
+    %small by
+    = link_to blog_post.user.username, vanity_path(blog_post.user.slug), :class => 'black'
+  - if params[:controller] == 'blog_posts'
+    ~ captains_log(blog_post.body).html_safe
+  - else
+    ~ truncate(captains_log(blog_post.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(blog_post.slug) }
