@@ -1,11 +1,6 @@
-%h1.headline.yellowmountain New Message
-%p= @greeting
 %p
   %strong From:
   = @email.name
   = '(' + @email.email + ')'
-%h2.headline.yellowmountain= @email.subject
-%p
-  %strong Message:
-  %br/
-  = @email.message
+%h1.headline.yellowmountain= @email.subject
+%p= @email.message
