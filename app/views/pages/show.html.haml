@@ -5,8 +5,7 @@
   %meta{:property => 'og:url', :content => vanity_url(@page.slug)}
   %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
 .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
-  .col-xs-12
-    .content-panel
-      %article.post
-        %h2.headline.yellowmountain= @page.title
-        ~ captains_log(@page.body).html_safe
+  .content-panel
+    %article.post
+      %h2.headline.yellowmountain= @page.title
+      ~ captains_log(@page.body).html_safe

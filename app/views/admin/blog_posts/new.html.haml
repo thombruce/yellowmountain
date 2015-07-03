@@ -1,23 +1,24 @@
-.col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.content-panel
-  %h1 Blog Post
-  %div
-    = form_for([:admin, @blog_post]) do |f|
+.col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+  .content-panel
+    %h2.headline.yellowmountain Blog Post
+    %div
+      = form_for([:admin, @blog_post]) do |f|
 
-      = f.hidden_field :user_id, :value => current_user.id
+        = f.hidden_field :user_id, :value => current_user.id
 
-      %br/
-      = f.label :title
-      = f.text_field :title, :class => 'form-control'
+        %br/
+        = f.label :title
+        = f.text_field :title, :class => 'form-control'
 
-      %br/
-      = f.label :slug
-      = f.text_field :slug_candidate, :class => 'form-control'
+        %br/
+        = f.label :slug
+        = f.text_field :slug_candidate, :class => 'form-control'
 
-      %br/
+        %br/
 
-      = f.label :body
-      = f.text_area :body, :class => 'form-control', :rows => '20'
-      
-      %br/
+        = f.label :body
+        = f.text_area :body, :class => 'form-control', :rows => '20'
+        
+        %br/
 
-      = f.submit "Publish", class: "button"
+        = f.submit "Publish", class: "button"

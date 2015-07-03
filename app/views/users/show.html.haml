@@ -1,9 +1,8 @@
 .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
-  .col-xs-12
-    .content-panel
-      %h2.yellowmountain.headline= @user.username
-    .content-panel.bg-white
-      - if @user.blog_posts.empty?
-        %h2.headline.yellowmountain No Posts
-      - else
-        = render @user.blog_posts
+  .content-panel
+    %h2.yellowmountain.headline= @user.username
+  .content-panel.bg-white
+    - if @user.blog_posts.empty?
+      %h2.headline.yellowmountain No Posts
+    - else
+      = render @user.blog_posts

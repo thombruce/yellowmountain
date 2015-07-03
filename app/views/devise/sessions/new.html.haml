@@ -1,17 +1,18 @@
-.col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4.content-panel
-  %h2.yellowmountain.headline Log in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .form-group
-      = f.label :login
-      = f.text_field :login, autofocus: true, :class => 'form-control'
-    .form-group
-      = f.label :password
-      = f.password_field :password, autocomplete: "off", :class => 'form-control'
-    - if devise_mapping.rememberable?
-      .checkbox
-        %label
-          = f.check_box :remember_me
-          Remember me
-    .actions
-      = f.submit "Log in", :class => 'btn btn-default'
-  = render "devise/shared/links"
+.col-xs-12.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4
+  .content-panel
+    %h2.yellowmountain.headline Log in
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label :login
+        = f.text_field :login, autofocus: true, :class => 'form-control'
+      .form-group
+        = f.label :password
+        = f.password_field :password, autocomplete: "off", :class => 'form-control'
+      - if devise_mapping.rememberable?
+        .checkbox
+          %label
+            = f.check_box :remember_me
+            Remember me
+      .actions
+        = f.submit "Log in", :class => 'btn btn-default'
+    = render "devise/shared/links"
