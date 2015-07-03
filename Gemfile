@@ -67,3 +67,6 @@ gem 'friendly_id'
 # gem 'paperclip-dropbox'
 # gem 'chartkick'
 # gem 'mail_form'
+
+
+gem 'roadie-rails'

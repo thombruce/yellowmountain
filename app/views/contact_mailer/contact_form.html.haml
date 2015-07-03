@@ -1,0 +1,8 @@
+%h2.headline.yellowmountain= @email.subject
+%p= @greeting
+%p= "From:" + @email.name
+%p= "Email:" + @email.email
+%p
+  %strong Message:
+  %br/
+  = @email.message
