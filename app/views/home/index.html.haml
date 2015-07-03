@@ -1,114 +1,113 @@
 // New problem:
 // Turbolinks destroys our lovely three.js header. You have a fix for this in... timepiece. Integrate it.
 // Yeah, the timepiece fix does not work. No idea why. This is a more complex problem than I have yet solved.
-.col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
-  .visible-xs-block.col-xs-12
-    .content-panel.bg-yellowmountain
-      - if user_signed_in?
-        %h2.black.headline
-          Hi,
-          = current_user.username
+.visible-xs-block.col-xs-12
+  .content-panel.bg-yellowmountain
+    - if user_signed_in?
+      %h2.black.headline
+        Hi,
+        = current_user.username
+      .small.text-center{:style => 'padding-top:15px;'}
+        %p
+          = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+          %span.github= '|'
+          = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
+    - else
+      %h2.black.headline Client sign in
+      = form_tag session_path(:user) do
+        .form-group
+          %label{:for => 'login-login-input'} Login
+          = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
+        .form-group
+          %label{:for => 'login-password-input'} Password
+          = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
+        .checkbox
+          %label
+            = check_box_tag 'user[remember_me]'
+            Remember me
+        %button.btn.btn-default{:type => 'submit'} Sign in
         .small.text-center{:style => 'padding-top:15px;'}
           %p
-            = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+            = link_to "New user", new_registration_path(:user), :class => 'github'
             %span.github= '|'
-            = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
-      - else
-        %h2.black.headline Client sign in
-        = form_tag session_path(:user) do
-          .form-group
-            %label{:for => 'login-login-input'} Login
-            = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
-          .form-group
-            %label{:for => 'login-password-input'} Password
-            = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
-          .checkbox
-            %label
-              = check_box_tag 'user[remember_me]'
-              Remember me
-          %button.btn.btn-default{:type => 'submit'} Sign in
-          .small.text-center{:style => 'padding-top:15px;'}
-            %p
-              = link_to "New user", new_registration_path(:user), :class => 'github'
-              %span.github= '|'
-              = link_to "Forgot your password?", new_password_path(:user), :class => 'github'
-  .col-xs-12.col-sm-8.col-md-8
-    .content-panel
-      .row
+            = link_to "Forgot your password?", new_password_path(:user), :class => 'github'
+.col-xs-12.col-sm-5.col-sm-offset-2.col-md-5.col-md-offset-2
+  .content-panel
+    .row
+      .col-xs-12
+        %h1.yellowmountain.headline.text-center
+          Welcome to Yellow Mountain
+          - unless Page.where(:slug => 'contact').empty?
+            %br/
+            %small.yellowmountain.headline
+              = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
+  .content-panel.bg-github
+    .row
+      - if Page.where(:slug => 'contact').empty?
         .col-xs-12
           %h1.yellowmountain.headline.text-center
-            Welcome to Yellow Mountain
-            - unless Page.where(:slug => 'contact').empty?
-              %br/
-              %small.yellowmountain.headline
-                = link_to "Enquire about our introductory offers.", vanity_path('contact'), :class => 'yellowmountain'
-    .content-panel.bg-github
-      .row
-        - if Page.where(:slug => 'contact').empty?
-          .col-xs-12
-            %h1.yellowmountain.headline.text-center
-              Building Mountains
-              %br/
-              %small.yellowmountain.headline Come back soon
-        - else
-          .col-xs-6
-            %h1.yellowmountain.headline.text-center
-              - if Time.now.hour > 10 && Time.now.hour < 18
-                Open for business
-              - else
-                = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
-          .col-xs-6
-            %h1.yellowmountain.headline.text-center
-              = timepiece('London')
-              %br/
-              %small.yellowmountain.headline Carlisle, UK
-    - unless @blog_posts.empty?
-      .content-panel.bg-white
-        = render @blog_posts
-        - if false
-          %br/
-          - @vanity_urls = VanityUrl.all
-          - @vanity_urls.each do |vanity_url|
-            = vanity_url.slug
-          %br/
-          - Rails.application.routes.routes.each do |route|
-            = route.path.spec.to_s
-  .hidden-xs.col-sm-4.col-md-4
-    .content-panel.bg-yellowmountain
-      - if user_signed_in?
-        %h2.black.headline
-          Hi,
-          = current_user.username
+            Building Mountains
+            %br/
+            %small.yellowmountain.headline Come back soon
+      - else
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            - if Time.now.hour > 10 && Time.now.hour < 18
+              Open for business
+            - else
+              = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
+        .col-xs-6
+          %h1.yellowmountain.headline.text-center
+            = timepiece('London')
+            %br/
+            %small.yellowmountain.headline Carlisle, UK
+  - unless @blog_posts.empty?
+    .content-panel.bg-white
+      = render @blog_posts
+      - if false
+        %br/
+        - @vanity_urls = VanityUrl.all
+        - @vanity_urls.each do |vanity_url|
+          = vanity_url.slug
+        %br/
+        - Rails.application.routes.routes.each do |route|
+          = route.path.spec.to_s
+.hidden-xs.col-sm-3.col-md-3
+  .content-panel.bg-yellowmountain
+    - if user_signed_in?
+      %h2.black.headline
+        Hi,
+        = current_user.username
+      .small.text-center{:style => 'padding-top:15px;'}
+        %p
+          = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+          %span.github= '|'
+          = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
+    - else
+      %h2.black.headline Client sign in
+      = form_tag session_path(:user) do
+        .form-group
+          %label{:for => 'login-login-input'} Login
+          = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
+        .form-group
+          %label{:for => 'login-password-input'} Password
+          = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
+        .checkbox
+          %label
+            = check_box_tag 'user[remember_me]'
+            Remember me
+        %button.btn.btn-default{:type => 'submit'} Sign in
         .small.text-center{:style => 'padding-top:15px;'}
           %p
-            = link_to 'Edit', edit_registration_path(:user), :class => 'github'
+            = link_to "New user", new_registration_path(:user), :class => 'github'
             %span.github= '|'
-            = link_to "Sign out", destroy_session_path(:user), :method => :delete, :class => 'github'
-      - else
-        %h2.black.headline Client sign in
-        = form_tag session_path(:user) do
-          .form-group
-            %label{:for => 'login-login-input'} Login
-            = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
-          .form-group
-            %label{:for => 'login-password-input'} Password
-            = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
-          .checkbox
-            %label
-              = check_box_tag 'user[remember_me]'
-              Remember me
-          %button.btn.btn-default{:type => 'submit'} Sign in
-          .small.text-center{:style => 'padding-top:15px;'}
-            %p
-              = link_to "New user", new_registration_path(:user), :class => 'github'
-              %span.github= '|'
-              = link_to "Forgot your password?", new_password_path(:user), :class => 'github'
-    .text-center
-      %a.social{:href => 'https://facebook.com/yellowmountainltd', :target => '_blank', :title => 'Yellow Mountain on Facebook'}
-        %i.fa.fa-4x.fa-facebook-square.facebook
-      %a.social{:href => 'https://twitter.com/yellowmountain_', :target => '_blank', :title => 'Yellow Mountain on Twitter'}
-        %i.fa.fa-4x.fa-twitter-square.twitter
-      %a.social{:href => 'https://www.linkedin.com/company/yellow-mountain-ltd', :target => '_blank', :title => 'Yellow Mountain on LinkedIn'}
-        %i.fa.fa-4x.fa-linkedin-square.linkedin
-      %a.social{:href => 'https://www.youtube.com/c/YellowMountainIoTeam', :target => '_blank', :title => 'Yellow Mountain on YouTube'}
-        %i.fa.fa-4x.fa-youtube-square.youtube
+            = link_to "Forgot your password?", new_password_path(:user), :class => 'github'
+  .text-center
+    %a.social{:href => 'https://facebook.com/yellowmountainltd', :target => '_blank', :title => 'Yellow Mountain on Facebook'}
+      %i.fa.fa-4x.fa-facebook-square.facebook
+    %a.social{:href => 'https://twitter.com/yellowmountain_', :target => '_blank', :title => 'Yellow Mountain on Twitter'}
+      %i.fa.fa-4x.fa-twitter-square.twitter
+    %a.social{:href => 'https://www.linkedin.com/company/yellow-mountain-ltd', :target => '_blank', :title => 'Yellow Mountain on LinkedIn'}
+      %i.fa.fa-4x.fa-linkedin-square.linkedin
+    %a.social{:href => 'https://www.youtube.com/c/YellowMountainIoTeam', :target => '_blank', :title => 'Yellow Mountain on YouTube'}
+      %i.fa.fa-4x.fa-youtube-square.youtube
