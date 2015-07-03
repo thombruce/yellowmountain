@@ -8,6 +8,6 @@ class ContactMailer < ApplicationMailer
   def contact_form(email)
     @email = email
 
-    mail to: "thom@yellowmountain.io", from: email.email, subject: 'YM Contact Form | ' + email.subject
+    mail to: "thom@yellowmountain.io", from: email.email, subject: 'YM Mail | ' + email.subject
   end
 end
