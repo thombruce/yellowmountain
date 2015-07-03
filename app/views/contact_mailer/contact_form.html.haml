@@ -1,9 +1,10 @@
-%h2.headline.yellowmountain
-  %i.ym-logo.yellowmountain
-  = @email.subject
+%h1.headline.yellowmountain New Message
 %p= @greeting
-%p= "From:" + @email.name
-%p= "Email:" + @email.email
+%p
+  %strong From:
+  = @email.name
+  = '(' + @email.email + ')'
+%h2.headline.yellowmountain= @email.subject
 %p
   %strong Message:
   %br/
