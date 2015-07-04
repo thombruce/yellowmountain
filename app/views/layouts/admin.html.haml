@@ -21,13 +21,13 @@
               .navbar-brand.headline{:style => ''}
                 <i class="ym-logo yellowmountain"></i><span class="yellowmountain">Yellow</span>Mountain
           %ul.nav.navbar-nav
-            %li.active
+            %li{:class => "#{'active' if current_page?(admin_path)}"}
               = link_to 'Dashboard', admin_path
-            %li
+            %li{:class => "#{'active' if current_page?(admin_blog_posts_path)}"}
               = link_to 'Posts', admin_blog_posts_path
-            %li
+            %li{:class => "#{'active' if current_page?(admin_pages_path)}"}
               = link_to 'Pages', admin_pages_path
-            %li
+            %li{:class => "#{'active' if current_page?(admin_users_path)}"}
               = link_to 'Users', admin_users_path
       .row
         = yield
