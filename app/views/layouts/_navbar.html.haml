@@ -14,5 +14,10 @@
           %a{'href' => vanity_path('contact'), 'title' => 'Contact Us'} Contact
       %li
         %a{'href' => blog_posts_path, 'title' => 'content'} Blog
+      - if user_signed_in? && current_user.has_role?(:admin)
+        .navbar-text
+          |
+        %li
+          %a{'href' => admin_path, 'title' => 'content'} Admin
     .nav.navbar-text.temporary.hidden
       Building Mountains. Come back soon.

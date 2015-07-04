@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %title Admin | Yellow Mountain
+    %meta{:name => 'description', :content => "Yellow Mountain admin dashboard."}
+    = stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'}
+    = csrf_meta_tags
+  %body{'data-no-turbolink' => false}
+    .container-fluid
+      #background
+        = image_tag 'skyscape.png'
+      .navbar.navbar-default.navbar-fixed-top
+        .container-fluid
+          .navbar-header
+            %a{:href => root_path}
+              - if false
+                .navbar-brand
+                  %i.ym-logo-circle-o.yellowmountain{:style => 'font-size:2em;'}
+              .navbar-brand.headline{:style => ''}
+                <i class="ym-logo yellowmountain"></i><span class="yellowmountain">Yellow</span>Mountain
+          %ul.nav.navbar-nav
+            %li.active
+              = link_to 'Dashboard', admin_path
+            %li
+              = link_to 'Posts', admin_blog_posts_path
+            %li
+              = link_to 'Pages', admin_pages_path
+            %li
+              = link_to 'Users', admin_users_path
+      .row
+        = yield
+      .row.text-center{:style => 'padding-top:15px;padding-bottom:15px;'}
+        %small{:style => 'color:#777;'}
+          Yellow Mountain Ltd.
+          %i.ym-logo.yellowmountain
+          Company No. 09616089
+        %br/
+        %small{:style => 'color:#777;'} Copyright &copy; #{Date.today.strftime('%Y')} Yellow Mountain Ltd. All rights reserved.
