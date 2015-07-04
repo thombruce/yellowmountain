@@ -4,10 +4,4 @@
   %h5
     = page.created_at.strftime("%B %d, %Y")
     %small= link_to 'Edit', edit_admin_page_path(page)
-  - array = page.body.scan(/(?:\<eval\>)(.*?)(?:\<\/eval\>)/)
-  - it = page.body.gsub(/(?:\<eval\>)(.*?)(?:\<\/eval\>)/, "out_for_eval")
-  - @b = []
-  - array.each do |a|
-    - @b << eval(a[0])
-  - finito = it.gsub(/(out_for_eval)/).with_index { |match, i| "#{@b[i]}" }
-  ~ truncate(finito.html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(page.slug) }
+  ~ truncate(captains_log(page.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(page.slug) }
