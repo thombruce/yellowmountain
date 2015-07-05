@@ -43,20 +43,19 @@ body{padding-top:80px;}
 .navbar-brand{font-size:2em;}
 
 .navbar-charcoal{
-  background-color:$github;
-  background-color:transparent;
+  background-color:rgba(#f5f5f5, 0.5);
   li a{
     padding-top:20px;
     padding-bottom:20px;
-    color:$yellowmountain;
+    color:$github;
     font-weight:300
   }
   li a:hover, li a:focus{
-  background-color: lighten($silver, 2%);
+  background-color: rgba(lighten($silver, 5%), 0.9);
   }
   .active a, .active a:hover, .active a:focus{
-    color:$yellowmountain;
-    background-color: lighten($silver, 5%);
+    color:$github;
+    background-color: rgba(lighten($silver, 2%), 0.9);
   }
 }
 
@@ -76,8 +75,7 @@ body{padding-top:80px;}
     padding: 0 20px 20px 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: $github;
-    background-color:transparent;
+    background-color: rgba(#f5f5f5, 0.5);
   }
 }
 
@@ -93,19 +91,19 @@ body{padding-top:80px;}
   margin-left: -20px;
 }
 .nav-sidebar > li > a {
-  color: $yellowmountain;
+  color: $github;
   padding-right: 20px;
   padding-left: 20px;
 }
 .nav-sidebar > li > a:hover,
 .nav-sidebar > li > a:focus {
-  background-color: lighten($silver, 2%);
+  background-color: rgba(lighten($silver, 5%), 0.9);
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: $yellowmountain;
-  background-color: lighten($silver, 5%);
+  color: $github;
+  background-color: rgba(lighten($silver, 2%), 0.9);
 }
 .sidebar > h3 {
   margin-right: -21px; /* 20px padding + 1px border */
@@ -113,8 +111,7 @@ body{padding-top:80px;}
   padding: 10px 20px;
   margin-top:0;
   margin-bottom:0;
-  background-color: darken($silver, 5%);
-  background-color: rgba($silver, 0.8);
+  background-color: rgba(darken($silver, 5%), 0.75);
 }
 
 // From http://getbootstrap.com/examples/dashboard/

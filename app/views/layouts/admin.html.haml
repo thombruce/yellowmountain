@@ -30,30 +30,30 @@
             = link_to 'Users', admin_users_path
     .container-fluid
       .col-sm-3.col-md-2.sidebar.sidebar-left
-        %h3.headline.yellowmountain Posts
+        %h3.headline.github Posts
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_blog_posts_path)}"}
-            = link_to 'View all', admin_blog_posts_path, :class => 'yellowmountain'
+            = link_to 'View all', admin_blog_posts_path
           %li{:class => "#{'active' if current_page?(new_admin_blog_post_path)}"}
-            = link_to 'New Post', new_admin_blog_post_path, :class => 'yellowmountain'
-        %h3.headline.yellowmountain Pages
+            = link_to 'New Post', new_admin_blog_post_path
+        %h3.headline.github Pages
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_pages_path)}"}
-            = link_to 'View all', admin_pages_path, :class => 'yellowmountain'
+            = link_to 'View all', admin_pages_path
           %li{:class => "#{'active' if current_page?(new_admin_page_path)}"}
-            = link_to 'New Page', new_admin_page_path, :class => 'yellowmountain'
-        %h3.headline.yellowmountain Users
+            = link_to 'New Page', new_admin_page_path
+        %h3.headline.github Users
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_users_path)}"}
-            = link_to 'View all', admin_users_path, :class => 'yellowmountain'
+            = link_to 'View all', admin_users_path
           %li{:class => "#{'active' if current_page?(new_admin_user_path)}"}
-            = link_to 'New User', new_admin_user_path, :class => 'yellowmountain'
-        %h3.headline.yellowmountain Settings
+            = link_to 'New User', new_admin_user_path
+        %h3.headline.github Settings
         %ul.nav.nav-sidebar
           %li
-            = link_to 'Item', '#', :class => 'yellowmountain'
+            = link_to 'Item', '#'
           %li
-            = link_to 'Item', '#', :class => 'yellowmountain'
+            = link_to 'Item', '#'
       .col-sm-10.col-sm-offset-2
         .row
           = yield
