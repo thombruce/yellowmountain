@@ -21,20 +21,46 @@
               .navbar-brand.headline{:style => ''}
                 <i class="ym-logo yellowmountain"></i><span class="yellowmountain">Yellow</span>Mountain
           %ul.nav.navbar-nav
-            %li{:class => "#{'active' if current_page?(admin_path)}"}
+            %li{:class => "#{'active' if controller_name == 'dashboard'}"}
               = link_to 'Dashboard', admin_path
-            %li{:class => "#{'active' if current_page?(admin_blog_posts_path)}"}
+            %li{:class => "#{'active' if controller_name == 'blog_posts'}"}
               = link_to 'Posts', admin_blog_posts_path
-            %li{:class => "#{'active' if current_page?(admin_pages_path)}"}
+            %li{:class => "#{'active' if controller_name == 'pages'}"}
               = link_to 'Pages', admin_pages_path
-            %li{:class => "#{'active' if current_page?(admin_users_path)}"}
+            %li{:class => "#{'active' if controller_name == 'users'}"}
               = link_to 'Users', admin_users_path
-      .row
-        = yield
-      .row.text-center{:style => 'padding-top:15px;padding-bottom:15px;'}
-        %small{:style => 'color:#777;'}
-          Yellow Mountain Ltd.
-          %i.ym-logo.yellowmountain
-          Company No. 09616089
-        %br/
-        %small{:style => 'color:#777;'} Copyright &copy; #{Date.today.strftime('%Y')} Yellow Mountain Ltd. All rights reserved.
+      .col-sm-3.col-md-2.sidebar.sidebar-left
+        %h3.headline.yellowmountain Posts
+        %ul.nav.nav-sidebar
+          %li{:class => "#{'active' if current_page?(admin_blog_posts_path)}"}
+            = link_to 'View all', admin_blog_posts_path, :class => 'yellowmountain'
+          %li{:class => "#{'active' if current_page?(new_admin_blog_post_path)}"}
+            = link_to 'New Post', new_admin_blog_post_path, :class => 'yellowmountain'
+        %h3.headline.yellowmountain Pages
+        %ul.nav.nav-sidebar
+          %li{:class => "#{'active' if current_page?(admin_pages_path)}"}
+            = link_to 'View all', admin_pages_path, :class => 'yellowmountain'
+          %li{:class => "#{'active' if current_page?(new_admin_page_path)}"}
+            = link_to 'New Page', new_admin_page_path, :class => 'yellowmountain'
+        %h3.headline.yellowmountain Users
+        %ul.nav.nav-sidebar
+          %li{:class => "#{'active' if current_page?(admin_users_path)}"}
+            = link_to 'View all', admin_users_path, :class => 'yellowmountain'
+          %li{:class => "#{'active' if current_page?(new_admin_user_path)}"}
+            = link_to 'New User', new_admin_user_path, :class => 'yellowmountain'
+        %h3.headline.yellowmountain Settings
+        %ul.nav.nav-sidebar
+          %li
+            = link_to 'Item', '#', :class => 'yellowmountain'
+          %li
+            = link_to 'Item', '#', :class => 'yellowmountain'
+      .col-sm-10.col-sm-offset-2
+        .row
+          = yield
+        .row.text-center{:style => 'padding-top:15px;padding-bottom:15px;'}
+          %small{:style => 'color:#777;'}
+            Yellow Mountain Ltd.
+            %i.ym-logo.yellowmountain
+            Company No. 09616089
+          %br/
+          %small{:style => 'color:#777;'} Copyright &copy; #{Date.today.strftime('%Y')} Yellow Mountain Ltd. All rights reserved.
