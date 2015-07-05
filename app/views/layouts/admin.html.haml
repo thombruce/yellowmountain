@@ -8,27 +8,27 @@
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0'}
     = csrf_meta_tags
   %body{'data-no-turbolink' => false}
+    #background
+      = image_tag 'skyscape.png'
+    .navbar.navbar-fixed-top.navbar-charcoal
+      .container-fluid
+        .navbar-header
+          %a{:href => root_path}
+            - if false
+              .navbar-brand
+                %i.ym-logo-circle-o.yellowmountain{:style => 'font-size:2em;'}
+            .navbar-brand.headline{:style => ''}
+              <i class="ym-logo yellowmountain"></i><span class="yellowmountain">Yellow</span><span class="github">Mountain</span>
+        %ul.nav.navbar-nav
+          %li{:class => "#{'active' if controller_name == 'dashboard'}"}
+            = link_to 'Dashboard', admin_path
+          %li{:class => "#{'active' if controller_name == 'blog_posts'}"}
+            = link_to 'Posts', admin_blog_posts_path
+          %li{:class => "#{'active' if controller_name == 'pages'}"}
+            = link_to 'Pages', admin_pages_path
+          %li{:class => "#{'active' if controller_name == 'users'}"}
+            = link_to 'Users', admin_users_path
     .container-fluid
-      #background
-        = image_tag 'skyscape.png'
-      .navbar.navbar-default.navbar-fixed-top
-        .container-fluid
-          .navbar-header
-            %a{:href => root_path}
-              - if false
-                .navbar-brand
-                  %i.ym-logo-circle-o.yellowmountain{:style => 'font-size:2em;'}
-              .navbar-brand.headline{:style => ''}
-                <i class="ym-logo yellowmountain"></i><span class="yellowmountain">Yellow</span>Mountain
-          %ul.nav.navbar-nav
-            %li{:class => "#{'active' if controller_name == 'dashboard'}"}
-              = link_to 'Dashboard', admin_path
-            %li{:class => "#{'active' if controller_name == 'blog_posts'}"}
-              = link_to 'Posts', admin_blog_posts_path
-            %li{:class => "#{'active' if controller_name == 'pages'}"}
-              = link_to 'Pages', admin_pages_path
-            %li{:class => "#{'active' if controller_name == 'users'}"}
-              = link_to 'Users', admin_users_path
       .col-sm-3.col-md-2.sidebar.sidebar-left
         %h3.headline.yellowmountain Posts
         %ul.nav.nav-sidebar
