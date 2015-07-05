@@ -1,7 +1,7 @@
 var isMobile = false; //initiate as false
 var WIDTH, HEIGHT;
 var VIEW_ANGLE, ASPECT, NEAR, FAR;
-var camera, scene1, scene2, renderer;
+var camera, scene1, scene2, renderer, controls;
 var rendered = false;
 
 function set_variables(){
@@ -55,6 +55,10 @@ $(document).ready(function(){
       //scene1.add( mountainwf ); ///// WIREFRAME
     });
 
+    if(isMobile){
+      controls = new THREE.DeviceOrientationControls( mountain );
+    }
+
     var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
     var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, opacity:0, transparent: true} ); // Setting planematerial before planetexture because plaintexture provides a callback to it and new pages via turbolinks complain about order.
     // Note that this means that .map is not set above, but that's okay...
@@ -106,8 +110,9 @@ $(document).ready(function(){
       requestAnimationFrame( render );
       if(mountain.rotation){
         if(isMobile){
-          mountain.rotation.y -= 0.002; // Preferred automatic rotation
+          //mountain.rotation.y -= 0.002; // Preferred automatic rotation
           //mountainwf.rotation.y -= 0.002; // Preferred automatic rotation ///// WIREFRAME
+          controls.update();
         }else{
           mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3; // Moves according to mouse position.
           mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003; // Moves according to mouse position.
@@ -125,6 +130,9 @@ $(document).ready(function(){
       rendered = true;
     }
     if(!rendered){
+      if(isMobile){
+        controls.connect();
+      }
       render();
     }
   }

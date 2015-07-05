@@ -18,6 +18,7 @@
 //
 //= require three.min
 //= require Detector
+//= require DeviceOrientationControls
 //
 // Unused - consider removal : Canvas version looked poor and didn't show our text - likely a fix but not worth time
 //= require CanvasRenderer
