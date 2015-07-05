@@ -118,7 +118,11 @@ body{padding-top:80px;}
   margin-top:0;
   margin-bottom:0;
   background-color: darken($silver, 5%);
-  background-color: rgba(darken($silver, 5%), 0.75);
+  background-color: rgba(darken($silver, 5%), 0.25);
+}
+.sidebar > h3.active {
+  background-color: darken($silver, 0%);
+  background-color: rgba(darken($silver, 0%), 0.75);
 }
 
 // From http://getbootstrap.com/examples/dashboard/

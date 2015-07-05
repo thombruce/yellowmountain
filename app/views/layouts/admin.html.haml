@@ -30,19 +30,19 @@
             = link_to 'Users', admin_users_path
     .container-fluid
       .col-sm-3.col-md-2.sidebar.sidebar-left
-        %h3.headline.github Posts
+        %h3.headline.github{:class => "#{'active yellowmountain' if controller_name == 'blog_posts'}"} Posts
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_blog_posts_path)}"}
             = link_to 'View all', admin_blog_posts_path
           %li{:class => "#{'active' if current_page?(new_admin_blog_post_path)}"}
             = link_to 'New Post', new_admin_blog_post_path
-        %h3.headline.github Pages
+        %h3.headline.github{:class => "#{'active yellowmountain' if controller_name == 'pages'}"} Pages
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_pages_path)}"}
             = link_to 'View all', admin_pages_path
           %li{:class => "#{'active' if current_page?(new_admin_page_path)}"}
             = link_to 'New Page', new_admin_page_path
-        %h3.headline.github Users
+        %h3.headline.github{:class => "#{'active yellowmountain' if controller_name == 'users'}"} Users
         %ul.nav.nav-sidebar
           %li{:class => "#{'active' if current_page?(admin_users_path)}"}
             = link_to 'View all', admin_users_path
