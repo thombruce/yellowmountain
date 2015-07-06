@@ -124,8 +124,8 @@ $(document).ready(function(){
             mountain.rotation.y = THREE.Math.degToRad( orientationY ) - 1.3;
             mountain.rotation.x = THREE.Math.degToRad( orientationX );
           }else if(screenOrientation == 90){
-            mountain.rotation.x = THREE.Math.degToRad( orientationY ) - 1.3;
-            mountain.rotation.y = THREE.Math.degToRad( orientationX );
+            mountain.rotation.x = THREE.Math.degToRad( - orientationY ) - 1.3;
+            mountain.rotation.y = THREE.Math.degToRad( - orientationX );
           }else if(screenOrientation == -90){
             mountain.rotation.x = THREE.Math.degToRad( - orientationY ) - 1.3;
             mountain.rotation.y = THREE.Math.degToRad( - orientationX );
