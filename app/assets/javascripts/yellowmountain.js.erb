@@ -123,8 +123,13 @@ $(document).ready(function(){
             mountain.rotation.y = THREE.Math.degToRad( orientationY ) - 1.3;
             //mountain.rotation.x = THREE.Math.degToRad( orientationX );
           }else if(screenOrientation == 90){
+            if(orientationY > 180){
+              mountain.rotation.y = THREE.Math.degToRad( orientationX - 180 ) - 1.3;
+            }else{
+              mountain.rotation.y = THREE.Math.degToRad( orientationX ) - 1.3;
+            }
             //mountain.rotation.x = THREE.Math.degToRad( - orientationY );
-            mountain.rotation.y = THREE.Math.degToRad( orientationX ) - 1.3;
+            //mountain.rotation.y = THREE.Math.degToRad( orientationX ) - 1.3;
           }else if(screenOrientation == -90){
             //mountain.rotation.x = THREE.Math.degToRad( orientationY );
             mountain.rotation.y = THREE.Math.degToRad( - orientationX ) - 1.3;
