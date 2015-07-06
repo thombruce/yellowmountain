@@ -113,10 +113,10 @@ $(document).ready(function(){
     function render() {
       requestAnimationFrame( render );
       if(mountain.rotation){
-        if(!isMobile && typeof window.DeviceOrientationEvent != "undefined"){
+        if(isMobile && typeof window.DeviceOrientationEvent != "undefined"){
 
-          var beta   = orientationX ? THREE.Math.degToRad( orientationX  ) : 0;
-          var gamma  = orientationY ? THREE.Math.degToRad( orientationY ) : 0;
+          mountain.rotation.y   = orientationX ? THREE.Math.degToRad( orientationX  ) : 0;
+          mountain.rotation.x  = orientationY ? THREE.Math.degToRad( orientationY ) : 0;
           
         }else{
           mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3; // Moves according to mouse position.
