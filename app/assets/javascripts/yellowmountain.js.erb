@@ -106,6 +106,8 @@ $(document).ready(function(){
       orientationX = event.beta;
       orientationY = event.gamma;
 
+      $('#orientation').html("X: " + orientationX + "Y: " + orientationY);
+
     }
 
     if(isMobile && typeof window.DeviceOrientationEvent != "undefined"){
