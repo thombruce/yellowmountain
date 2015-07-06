@@ -1,4 +1,4 @@
-var isMobile = false; //initiate as false
+var isMobile = false;
 var WIDTH, HEIGHT;
 var VIEW_ANGLE, ASPECT, NEAR, FAR;
 var camera, scene1, scene2, renderer;
@@ -29,7 +29,7 @@ $(document).ready(function(){
     camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR );
 
     if (!renderer){
-      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // debug rule - antialiasing is costly. Disable advised
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
       renderer.setPixelRatio( window.devicePixelRatio ); // ALWAYS, ALWAYS, ALWAYS set this before setting the size... obviously. I mean duh.
       renderer.setSize( WIDTH, HEIGHT );
       renderer.autoClear = false;
@@ -39,21 +39,16 @@ $(document).ready(function(){
 
     loader = new THREE.JSONLoader();
     var material = new THREE.MeshLambertMaterial( { color: 0xffdc00, shading: THREE.FlatShading } );
-    //var material2 = new THREE.MeshBasicMaterial( { color: 0xffdc00, shading: THREE.FlatShading, wireframe: true } ); ///// WIREFRAME
 
-    var mouseX = 0, mouseY = 0; // Moves according to mouse position.
-    var windowHalfX = window.innerWidth / 2; // Moves according to mouse position.
-    var windowHalfY = window.innerHeight / 2; // Moves according to mouse position.
+    var mouseX = 0, mouseY = 0;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
     var orientationX = -1.3, orientationY = 0, screenOrientation = 0;
 
     loader.load("<%= asset_path('yellowmountain.json') %>", function ( geometry ) {
       mountain = new THREE.Mesh(geometry, material);
-      //mountainwf = new THREE.Mesh(geometry, material2); ///// WIREFRAME
       mountain.rotation.y = -0.754;
-      //mountainwf.rotation.y = -0.754; ///// WIREFRAME
-      //mountainwf.scale.set(4,4,4) ///// WIREFRAME
       scene1.add( mountain );
-      //scene1.add( mountainwf ); ///// WIREFRAME
     });
 
     var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
@@ -84,8 +79,8 @@ $(document).ready(function(){
 
 
     function onWindowResize() {
-      windowHalfX = window.innerWidth / 2; // Moves according to mouse position.
-      windowHalfY = window.innerHeight / 2; // Moves according to mouse position.
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
 
       camera.aspect = document.getElementById("mountain").offsetWidth / document.getElementById("mountain").offsetHeight;
       camera.updateProjectionMatrix();
@@ -97,11 +92,11 @@ $(document).ready(function(){
 
     function onDocumentMouseMove( event ) {
 
-      mouseX = ( event.clientX - windowHalfX ); // Moves according to mouse position.
-      mouseY = ( event.clientY - windowHalfY ); // Moves according to mouse position.
+      mouseX = ( event.clientX - windowHalfX );
+      mouseY = ( event.clientY - windowHalfY );
 
     }
-    document.addEventListener( 'mousemove', onDocumentMouseMove, false ); // Moves according to mouse position.
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
     function onScreenOrientationChangeEvent( event ) {
 
       screenOrientation = window.orientation || 0;
@@ -134,14 +129,10 @@ $(document).ready(function(){
             //mountain.rotation.x = THREE.Math.degToRad( - orientationX );
           }
         }else{
-          mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3; // Moves according to mouse position.
-          mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003; // Moves according to mouse position.
+          mountain.rotation.y = ( - mouseX - mountain.rotation.y ) * 0.0006 -1.3;
+          mountain.rotation.x = ( - mouseY - mountain.rotation.x ) * 0.0003;
         }
       }
-      //mountainwf.rotation.y = ( - mouseX - mountainwf.rotation.y ) * 0.0012 -1.3; // Moves according to mouse position. ///// WIREFRAME
-      //mountainwf.rotation.x = ( - mouseY - mountainwf.rotation.x ) * 0.0003; // Moves according to mouse position. ///// WIREFRAME
-      //mountain.rotation.y -= 0.01; // debug rotation
-      //mountainwf.rotation.y -= 0.01; // debug rotation ///// WIREFRAME
 
       renderer.clear();
       renderer.render( scene1, camera );
