@@ -1,4 +1,18 @@
 @import "colors";
 @import "fonts";
 
+@media only screen and (min-device-width: 601px) {
+  .content {width: 600px !important;}
+  .col425 {width: 425px!important;}
+}
+
+body {margin: 0; padding: 0; min-width: 100%!important;}
+.content {width: 100%; max-width: 600px;}
+
 .headline{font-family: 'Helvetica Neue', 'Roboto', sans-serif;font-weight:100;}
+
+.header {padding: 40px 30px 20px 30px;}
+
+.subhead {font-size: 15px; color: #ffffff; font-family: sans-serif; letter-spacing: 10px;}
+.h1 {font-size: 33px; line-height: 38px; font-weight: bold;}
+.h1, .h2, .bodycopy {color: #153643; font-family: sans-serif;}

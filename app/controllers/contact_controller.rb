@@ -1,4 +1,5 @@
 class ContactController < ApplicationController
+  Haml::Template.options[:format] = :xhtml
   def create
     @email = Email.new(contact_params)
     ContactMailer.contact_form(@email).deliver_now
