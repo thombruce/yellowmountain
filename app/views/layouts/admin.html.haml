@@ -28,6 +28,8 @@
             = link_to 'Pages', admin_pages_path
           %li{:class => "#{'active' if controller_name == 'users'}"}
             = link_to 'Users', admin_users_path
+          %li{:class => "#{'active' if controller_name == 'settings'}"}
+            = link_to 'Settings', '#'
     .container-fluid
       .col-sm-3.col-md-2.sidebar.sidebar-left
         %h3.headline.github{:class => "#{'active yellowmountain' if controller_name == 'blog_posts'}"} Posts
