@@ -171,3 +171,51 @@ $(document).ready(function(){
     }
   }
 })
+
+
+
+
+var path = "<%= image_path('YMTextpw2.png') %>";
+
+var planegeometry = new THREE.PlaneBufferGeometry(8, 2);
+var planematerial = new THREE.MeshBasicMaterial({ map: loadImage(path) });
+var plane = new THREE.Mesh(planegeometry, planematerial);
+scene2.add(plane);
+
+function loadImage(path) {
+  var canvas = document.createElement('canvas');
+  canvas.style.position = 'absolute';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  //document.body.appendChild(canvas);
+
+  var texture = new THREE.Texture(canvas);
+
+  var img = new Image();
+  img.crossOrigin = '' 
+  img.onload = function() {
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      var context = canvas.getContext('2d');
+      context.drawImage(img, 0, 0);
+
+      texture.needsUpdate = true;
+  };
+  img.src = path;
+  return texture;
+};
+
+
+    var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
+    var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, opacity:0, transparent: true} ); // Setting planematerial before planetexture because plaintexture provides a callback to it and new pages via turbolinks complain about order.
+    // Note that this means that .map is not set above, but that's okay...
+    var planetexture = new THREE.ImageUtils.loadTexture("<%= image_path('YMTextpw2.png') %>", null, function(){
+      planematerial.opacity = 1;
+    });
+    planetexture.magFilter = THREE.NearestFilter;
+    planetexture.minFilter = THREE.NearestFilter;
+    planematerial.map = planetexture; // we set it here, now having been provided the texture.
+    var plane = new THREE.Mesh( planegeometry, planematerial );
+    scene2.add( plane );
+    // And Jesus wept! For there were no more worlds to conquer.
