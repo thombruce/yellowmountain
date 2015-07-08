@@ -22,6 +22,7 @@ function set_variables(){
 $(document).ready(function(){
 
   if (Detector.webgl){
+    THREE.ImageUtils.crossOrigin = ''
     set_variables();
 
     scene1 = new THREE.Scene();
@@ -54,7 +55,6 @@ $(document).ready(function(){
     var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
     var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, opacity:0, transparent: true} ); // Setting planematerial before planetexture because plaintexture provides a callback to it and new pages via turbolinks complain about order.
     // Note that this means that .map is not set above, but that's okay...
-    THREE.ImageUtils.crossOrigin = 'use-credentials'
     var planetexture = new THREE.ImageUtils.loadTexture("<%= image_path('YMTextpw2.png') %>", null, function(){
       planematerial.opacity = 1;
     });
