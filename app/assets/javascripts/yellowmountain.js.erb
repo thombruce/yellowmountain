@@ -54,7 +54,7 @@ $(document).ready(function(){
     var planegeometry = new THREE.PlaneBufferGeometry(8, 2 );
     var planematerial = new THREE.MeshBasicMaterial( {color: 0xefefef, opacity:0, transparent: true} ); // Setting planematerial before planetexture because plaintexture provides a callback to it and new pages via turbolinks complain about order.
     // Note that this means that .map is not set above, but that's okay...
-    var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainLogo_Text-pw2.png') %>", null, function(){
+    var planetexture = new THREE.ImageUtils.loadTexture("<%= asset_path('YellowMountainText_pw2.png') %>", null, function(){
       planematerial.opacity = 1;
     });
     planetexture.magFilter = THREE.NearestFilter;

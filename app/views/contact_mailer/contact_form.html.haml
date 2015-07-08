@@ -12,7 +12,7 @@
     %table{ :width => "115", :align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0" }
       %tr
         %td{ :height => "115", :style => "padding: 0 20px 20px 0;" }
-          = image_tag 'static.png', :width => "115", :height => "115", :border => "0", :alt => ""
+          %img{ :src => image_path('static.png'), :width => "115", :height => "115", :border => "0", :alt => "" }/
     <!--[if (gte mso 9)|(IE)]> <table width="380" align="left" cellpadding="0" cellspacing="0" border="0"> <tr> <td> <![endif]-->
     %table.col380{ :align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0", :style => "width: 100%; max-width: 380px;"}
       %tr
@@ -30,7 +30,7 @@
     <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
 %tr
   %td.innerpadding.borderbottom
-    = image_tag 'static.png', :alt => "", :border => "0", :width => "100%"
+    %img{:alt => "", :border => "0", :src => image_path('static.png'), :width => "100%"}/
 %tr
   %td.innerpadding.borderbottom
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.

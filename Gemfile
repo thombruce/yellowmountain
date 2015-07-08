@@ -68,7 +68,7 @@ gem 'friendly_id'
 # gem 'chartkick'
 # gem 'mail_form'
 
-
-gem 'roadie-rails'
+gem 'nokogiri'
+gem 'premailer-rails'
 
 gem 'rack-cors', :require => 'rack/cors'
