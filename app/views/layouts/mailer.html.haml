@@ -4,5 +4,13 @@
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
     %title Contact
     = stylesheet_link_tag 'email', media: 'all'
-  %body
-    = yield
+  %body{:yahoo => true, :bgcolor => "#efefef"}
+    %table{:width => '100%', :bgcolor => '#efefef', :border => '0', :cellpadding => '0', :cellspacing => '0'}
+      %tr
+        %td
+          <!--[if (gte mso 9)|(IE)]> <table width='600px' align='center' border='0' cellpadding='0' cellspacing='0'> <tr> <td> <![endif]-->
+          %table.content{:align => 'center', :cellpadding => '0', :cellspacing => '0', :bgcolor => '#ffffff', :border => '0'}
+            = render 'layouts/email/header'
+            = yield
+            = render 'layouts/email/footer'
+          <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
