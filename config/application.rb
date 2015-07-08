@@ -26,7 +26,9 @@ module Yellowmountain
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        #resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '/fonts/*', :headers => :any, :methods => :get
+        resource '/models/*', :headers => :any, :methods => :get
       end
     end
 
