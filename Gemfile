@@ -70,3 +70,5 @@ gem 'friendly_id'
 
 
 gem 'roadie-rails'
+
+gem 'rack-cors', :require => 'rack/cors'
