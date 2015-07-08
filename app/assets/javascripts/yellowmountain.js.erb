@@ -22,7 +22,7 @@ function set_variables(){
 $(document).ready(function(){
 
   if (Detector.webgl){
-    THREE.ImageUtils.crossOrigin = 'use-credentials';
+    THREE.ImageUtils.crossOrigin = '';
     set_variables();
 
     scene1 = new THREE.Scene();
