@@ -3,10 +3,12 @@
     %table{ :width => "100%", :border => "0", :cellspacing => "0", :cellpadding => "0" }
       %tr
         %td.h2
-          Welcome to our responsive email!
+          New message!
       %tr
         %td.bodycopy
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+          = "From: "  + @email.name + " (" + @email.email} + ")"
+          %br/
+          = @email.message
 %tr
   %td.innerpadding.borderbottom
     %table{ :width => "115", :align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0" }
