@@ -5,11 +5,10 @@
         %td.h2
           = @email.subject
       %tr
-        %td.borderbottom
+        %td
           = "From: "  + @email.name + " (" + @email.email + ")"
       %tr
         %td.bodycopy
-          %br/
           = @email.message
 %tr
   %td.innerpadding.borderbottom
@@ -35,6 +34,3 @@
 %tr
   %td.innerpadding.borderbottom
     %img{:alt => "", :border => "0", :src => image_path('static.png'), :width => "100%"}/
-%tr
-  %td.innerpadding.borderbottom
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.

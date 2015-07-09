@@ -1,4 +1,13 @@
-%p
-  Welcome #{@email}!
-%p You can confirm your account email through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+%tr
+  %td.innerpadding.borderbottom
+    %table{ :width => "100%", :border => "0", :cellspacing => "0", :cellpadding => "0" }
+      %tr
+        %td.h2
+          Welcome #{@email}!
+      %tr
+        %td.bodycopy
+          %p You can confirm your account email through the link below:
+          %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+%tr
+  %td.innerpadding.borderbottom
+    %img{:alt => "", :border => "0", :src => image_path('static.png'), :width => "100%"}/
