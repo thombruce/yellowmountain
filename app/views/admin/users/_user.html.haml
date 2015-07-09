@@ -1,2 +1,3 @@
 %strong= user.username
-%span= user.roles.first.name.capitalize
+- if user.roles.any?
+  %span= user.roles.first.name.capitalize
