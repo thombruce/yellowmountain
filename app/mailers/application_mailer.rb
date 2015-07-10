@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "thom@yellowmountain.io"
+  default from: "support@yellowmountain.io"
   layout 'mailer'
 end
