@@ -5,6 +5,9 @@
       = devise_error_messages!
       = f.hidden_field :invitation_token
       .form-group
+        = f.label :username
+        = f.text_field :username, autofocus: true, :class => 'form-control'
+      .form-group
         = f.label :password
         = f.password_field :password, :class => 'form-control'
       .form-group

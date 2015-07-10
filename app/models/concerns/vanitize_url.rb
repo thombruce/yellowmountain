@@ -15,10 +15,12 @@ module VanitizeUrl
   end
 
   def vanitize_url
-    if self.vanity_url
-      self.vanity_url.update_attributes(:slug => self.slug, :target => self.path)
-    else
-      self.create_vanity_url(:slug => self.slug, :target => self.path)
+    unless self.slug.blank? # seems the best way to handle invitable - where username is not set until user accepts invitation.
+      if self.vanity_url
+        self.vanity_url.update_attributes(:slug => self.slug, :target => self.path)
+      else
+        self.create_vanity_url(:slug => self.slug, :target => self.path)
+      end
     end
   end
 end
