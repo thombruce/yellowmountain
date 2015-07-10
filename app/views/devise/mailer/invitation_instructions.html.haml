@@ -1,0 +1,14 @@
+%tr
+  %td.innerpadding.borderbottom
+    %table{ :width => "100%", :border => "0", :cellspacing => "0", :cellpadding => "0" }
+      %tr
+        %td.h2
+          = t("devise.mailer.invitation_instructions.hello", email: @resource.email)
+      %tr
+        %td.bodycopy
+          %p= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url)
+          %p= link_to t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token)
+          %p= t("devise.mailer.invitation_instructions.ignore").html_safe
+%tr
+  %td.innerpadding.borderbottom
+    You are receiving this email as an invitation to register a user account with #{link_to 'Yellow Mountain', root_url}. If you feel you have received this message in error, you may ignore it. To create your account, please use the link provided.

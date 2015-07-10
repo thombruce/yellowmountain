@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   friendly_id :username, use: [:slugged, :finders]
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, :presence => true, :uniqueness => { :case_sensitive => false }

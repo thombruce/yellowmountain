@@ -59,6 +59,7 @@ gem "captains_log"
 
 # User authentication and privileges
 gem "devise"
+gem "devise_invitable"
 gem "rolify"
 gem "cancancan"
 
