@@ -6,7 +6,7 @@
           = @email.subject
       %tr
         %td
-          = "From: "  + @email.name + " (" + @email.email + ")"
+          = "From: #{@email.name} <#{@email.email}>"
       %tr
         %td.bodycopy
           = @email.message
