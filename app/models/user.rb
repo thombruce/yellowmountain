@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_many :blog_posts, :dependent => :destroy
   has_many :pages, :dependent => :destroy
 
+  def full_name
+    "#{profile.first_name} #{profile.last_name}"
+  end
+
   def should_generate_new_friendly_id?
     slug.blank? || username_changed?
   end

@@ -1,6 +1,10 @@
 .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
   .content-panel
-    %h2.yellowmountain.headline= @user.username
+    %h2.yellowmountain.headline
+      = @user.full_name
+      (#{@user.username})
+    %p
+      = @user.profile.bio
   .content-panel.bg-white
     - if @user.blog_posts.empty?
       %h2.headline.yellowmountain No Posts

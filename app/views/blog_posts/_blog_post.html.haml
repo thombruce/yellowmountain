@@ -4,7 +4,7 @@
   %h5
     = blog_post.created_at.strftime("%B %d, %Y")
     %small by
-    = link_to blog_post.user.username, vanity_path(blog_post.user.slug), :class => 'black'
+    = link_to blog_post.user.full_name, vanity_path(blog_post.user.slug), :class => 'black'
   - if params[:controller] == 'blog_posts'
     ~ captains_log(blog_post.body).html_safe
   - else
