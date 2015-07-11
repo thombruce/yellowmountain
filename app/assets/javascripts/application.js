@@ -27,3 +27,5 @@
 //= require timepiece
 //= require_tree .
 //= require turbolinks
+
+Turbolinks.enableProgressBar();

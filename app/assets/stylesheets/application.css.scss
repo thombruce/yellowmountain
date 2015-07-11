@@ -12,6 +12,10 @@
 
 @import "fonts";
 
+html.turbolinks-progress-bar::before {
+  background-color: $yellowmountain !important;
+}
+
 *:focus, *:active {
     outline: none !important;
 }
