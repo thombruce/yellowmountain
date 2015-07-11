@@ -3,6 +3,16 @@
     %h2.yellowmountain.headline Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
+      = f.fields_for :profile, resource.build_profile do |ff|
+        .form-group
+          = ff.label :first_name
+          = ff.text_field :first_name, :class => 'form-control'
+        .form-group
+          = ff.label :last_name
+          = ff.text_field :last_name, :class => 'form-control'
+        .form-group
+          = ff.label :bio
+          = ff.text_area :bio, :class => 'form-control'
       .form-group
         = f.label :username
         = f.text_field :username, autofocus: true, :class => 'form-control'
