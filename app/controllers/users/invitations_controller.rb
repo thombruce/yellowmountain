@@ -36,7 +36,7 @@ class Users::InvitationsController < Devise::InvitationsController
 
   # You can put the params you want to permit in the empty array.
   def configure_accept_invitation_params
-    devise_parameter_sanitizer.for(:accept_invitation) << [:email, :username]
+    devise_parameter_sanitizer.for(:accept_invitation) << [:email, :username, :profile_attributes => [:first_name, :last_name, :bio]]
   end
 
 end
