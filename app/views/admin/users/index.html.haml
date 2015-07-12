@@ -1,3 +1,13 @@
 .col-xs-12
   .content-panel
-    = render @users
+    %h2.yellowmountain.headline Users
+    .table-responsive
+      %table.table
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Bio
+            %th Roles
+        %tbody
+          = render @users

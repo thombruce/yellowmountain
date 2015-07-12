@@ -1,3 +1,14 @@
-%strong= user.username
-- if user.roles.any?
-  %span= user.roles.first.name.capitalize
+%tr
+  %td
+    %a{:href => vanity_path(user.username)}
+      - if user.profile
+        = user.full_name
+        %br
+      %small (#{user.username})
+  %td= user.email
+  %td
+    - if user.profile
+      = truncate(user.profile.bio, length: 30)
+  %td
+    - if user.roles.any?
+      = user.roles.first.name.capitalize
