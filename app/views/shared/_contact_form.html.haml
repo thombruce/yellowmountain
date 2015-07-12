@@ -1,14 +1,15 @@
 = form_for @email do |f|
-  = f.label :name
-  = f.text_field :name, :class => 'form-control'
-  %br/
-  = f.label :email
-  = f.email_field :email, :class => 'form-control'
-  %br/
-  = f.label :subject
-  = f.text_field :subject, :class => 'form-control'
-  %br/
-  = f.label :message
-  = f.text_area :message, :class => 'form-control'
-  %br/
-  = f.submit 'Send message', :class=> "btn btn-primary"
+  .form-group
+    = f.label :name
+    = f.text_field :name, :class => 'form-control', :value => (current_user.full_name if current_user) 
+  .form-group
+    = f.label :email
+    = f.email_field :email, :class => 'form-control', :value => (current_user.email if current_user)
+  .form-group
+    = f.label :subject
+    = f.text_field :subject, :class => 'form-control'
+  .form-group
+    = f.label :message
+    = f.text_area :message, :class => 'form-control'
+  .actions
+    = f.submit 'Send message', :class=> "btn btn-primary"
