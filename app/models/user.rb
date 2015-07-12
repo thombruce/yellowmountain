@@ -25,14 +25,6 @@ class User < ActiveRecord::Base
     "#{profile.first_name} #{profile.last_name}"
   end
 
-  def recognizer
-    if username.blank?
-      id
-    else
-      username
-    end
-  end
-
   def should_generate_new_friendly_id?
     slug.blank? || username_changed?
   end
