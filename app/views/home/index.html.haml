@@ -61,6 +61,10 @@
             = timepiece('London')
             %br/
             %small.yellowmountain.headline Carlisle, UK
+        - if !(Time.now.in_time_zone('London').hour > 10 && Time.now.hour < 18 && !Date.today.saturday? && !Date.today.sunday?)
+          .col-xs-12
+            %h2.yellowmountain.headline.text-center
+              Open: 10am - 6pm Weekdays
   - unless @blog_posts.empty?
     .content-panel.bg-white
       = render @blog_posts
