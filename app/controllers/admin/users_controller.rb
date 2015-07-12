@@ -12,7 +12,7 @@ class Admin::UsersController < Admin::AdminController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      redirect_to admin_users_path
     else
       render 'new'
     end
@@ -21,7 +21,7 @@ class Admin::UsersController < Admin::AdminController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to root_path
+      redirect_to admin_users_path
     else
       render 'edit'
     end
@@ -40,6 +40,6 @@ class Admin::UsersController < Admin::AdminController
   private
 
   def user_params
-    params.require(:user).permit(:username)
+    params.require(:user).permit(:email, :username, :profile_attributes => [:first_name, :last_name, :bio])
   end
 end

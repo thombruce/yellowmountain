@@ -73,3 +73,5 @@ gem 'nokogiri'
 gem 'premailer-rails'
 
 gem 'rack-cors', :require => 'rack/cors'
+
+gem 'dynamic_form' # Handles error messages - currently unused as we need a different HTML structure. Use as reference if you want to build a helper.

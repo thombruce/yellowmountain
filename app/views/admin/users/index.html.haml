@@ -2,12 +2,12 @@
   .content-panel
     %h2.yellowmountain.headline Users
     .table-responsive
-      %table.table
+      %table.table.table-hover
         %thead
           %tr
             %th Name
             %th Email
             %th Bio
             %th Roles
-        %tbody
+        %tbody.bg-white
           = render @users

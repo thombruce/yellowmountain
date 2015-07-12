@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => { :case_sensitive => false }
 
   has_one :profile, :dependent => :destroy
-  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :profile, :update_only => true
 
   has_many :blog_posts, :dependent => :destroy
   has_many :pages, :dependent => :destroy

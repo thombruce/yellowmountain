@@ -1,14 +1,21 @@
 %tr
   %td
-    %a{:href => vanity_path(user.username)}
+    %a.github{:href => edit_admin_user_path(user.username), :style => 'display:block;margin:-8px;padding:8px;'}
       - if user.profile
         = user.full_name
-        %br
       %small (#{user.username})
-  %td= user.email
   %td
-    - if user.profile
-      = truncate(user.profile.bio, length: 30)
+    %a.github{:href => edit_admin_user_path(user.username), :style => 'display:block;margin:-8px;padding:8px;'}
+      = user.email
   %td
-    - if user.roles.any?
-      = user.roles.first.name.capitalize
+    %a.github{:href => edit_admin_user_path(user.username), :style => 'display:block;margin:-8px;padding:8px;'}
+      - if user.profile && !user.profile.bio.blank?
+        = truncate(user.profile.bio, length: 30)
+      - else
+        %i ...
+  %td
+    %a.github{:href => edit_admin_user_path(user.username), :style => 'display:block;margin:-8px;padding:8px;'}
+      - if user.roles.any?
+        = user.roles.first.name.capitalize
+      - else
+        %i ...

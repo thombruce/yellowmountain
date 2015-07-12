@@ -4,7 +4,7 @@
     = form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f|
       = devise_error_messages!
       = f.hidden_field :invitation_token
-      = f.fields_for :profile, resource.build_profile do |ff|
+      = f.fields_for :profile, resource.profile || resource.build_profile do |ff|
         .form-group
           = ff.label :first_name
           = ff.text_field :first_name, :class => 'form-control'
