@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :login
   include VanitizeUrl
+  default_scope -> { order('users.created_at DESC') }
   rolify
   extend FriendlyId
   friendly_id :username, use: [:slugged, :finders]
@@ -19,6 +20,14 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{profile.first_name} #{profile.last_name}"
+  end
+
+  def recognizer
+    if username.blank?
+      id
+    else
+      username
+    end
   end
 
   def should_generate_new_friendly_id?

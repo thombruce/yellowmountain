@@ -4,11 +4,12 @@
     %div
       = form_for([:admin, @user]) do |f|
 
-        .alert.alert-error.alert-danger
-          %button.close{'data-dismiss' => 'alert', :type => 'button'} x
-          %ul
-            - @user.errors.full_messages.each do |e|
-              %li= e
+        - unless @user.errors.empty?
+          .alert.alert-error.alert-danger
+            %button.close{'data-dismiss' => 'alert', :type => 'button'} x
+            %ul
+              - @user.errors.full_messages.each do |e|
+                %li= e
 
         = f.fields_for :profile, @user.profile || @user.build_profile do |ff|
           .form-group
@@ -27,7 +28,7 @@
 
         .form-group
           = f.label :email
-          = f.text_field :email, :class => 'form-control'
+          = f.email_field :email, :class => 'form-control'
 
         .actions
           = f.submit "Save", :class => 'btn btn-default'
