@@ -23,4 +23,5 @@
       - else
         %i ...
   %td
-    = link_to 'Delete',  admin_user_path(user.recognizer),  method: :delete, data: { confirm: 'Are you sure?' }
+    %a{:href => admin_user_path(user.recognizer), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}
+      %i.fa.fa-trash-o.rubylang
