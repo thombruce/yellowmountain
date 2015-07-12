@@ -52,7 +52,7 @@
       - else
         .col-xs-6
           %h1.yellowmountain.headline.text-center
-            - if Time.now.in_time_zone('London').hour > 10 && Time.now.hour < 18
+            - if Time.now.in_time_zone('London').hour > 10 && Time.now.hour < 18 && !Date.today.saturday? && !Date.today.sunday?
               Open for business
             - else
               = link_to "Leave a message", vanity_path('contact'), :class => 'yellowmountain'
