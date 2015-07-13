@@ -7,6 +7,10 @@ class BlogPost < ActiveRecord::Base
 
   belongs_to :user
 
+  def author
+    user.full_name
+  end
+
   def slug_candidates
     [
       :slug_candidate, 

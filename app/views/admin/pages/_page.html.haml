@@ -1,7 +1,19 @@
-%article.post_admin
-  %h2.headline.yellowmountain
-    %a{:href => vanity_path(page.slug)}= page.title
-  %h5
-    = page.created_at.strftime("%B %d, %Y")
-    %small= link_to 'Edit', edit_admin_page_path(page)
-  ~ truncate(captains_log(page.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(page.slug) }
+%tr
+  %td
+    %a.github{:href => edit_admin_blog_post_path(page.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      %strong= page_counter + 1
+  %td
+    %a.github{:href => edit_admin_blog_post_path(page.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = page.title
+  %td
+    %a.github{:href => edit_admin_blog_post_path(page.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = page.author
+  %td
+    %a.github{:href => edit_admin_blog_post_path(page.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = page.created_at.strftime("%B %d, %Y")
+  %td
+    %a.github{:href => edit_admin_blog_post_path(page.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = truncate(strip_tags(page.body), length: 30)
+  %td
+    %a{:href => admin_blog_post_path(page.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}
+      %i.fa.fa-trash-o.rubylang

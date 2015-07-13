@@ -1,7 +1,19 @@
-%article.post_admin.word-break
-  %h2.headline.yellowmountain
-    %a{:href => vanity_path(blog_post.slug)}= blog_post.title
-  %h5
-    = blog_post.created_at.strftime("%B %d, %Y")
-    %small= link_to 'Edit', edit_admin_blog_post_path(blog_post)
-  ~ truncate(captains_log(blog_post.body).html_safe, length: 300, escape: false, separator: ' ', omission: '... ') { link_to '(continue reading)', vanity_path(blog_post.slug) }
+%tr
+  %td
+    %a.github{:href => edit_admin_blog_post_path(blog_post.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      %strong= blog_post_counter + 1
+  %td
+    %a.github{:href => edit_admin_blog_post_path(blog_post.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = blog_post.title
+  %td
+    %a.github{:href => edit_admin_blog_post_path(blog_post.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = blog_post.author
+  %td
+    %a.github{:href => edit_admin_blog_post_path(blog_post.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = blog_post.created_at.strftime("%B %d, %Y")
+  %td
+    %a.github{:href => edit_admin_blog_post_path(blog_post.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = truncate(strip_tags(blog_post.body), length: 30)
+  %td
+    %a{:href => admin_blog_post_path(blog_post.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}
+      %i.fa.fa-trash-o.rubylang

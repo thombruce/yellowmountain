@@ -1,3 +1,15 @@
 .col-xs-12
   .content-panel
-    = render @blog_posts
+    %h2.yellowmountain.headline Posts
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Title
+            %th Author
+            %th Date
+            %th Body
+            %th
+        %tbody.bg-white
+          = render @blog_posts
