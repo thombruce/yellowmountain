@@ -1,0 +1,25 @@
+.col-xs-12
+  .content-panel
+    %h2.yellowmountain.headline User
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Email
+            %th Bio
+            %th Roles
+            %th
+        %tbody.bg-white
+          = render @user
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Extension
+            %th
+        %tbody.bg-white
+          = render @domains

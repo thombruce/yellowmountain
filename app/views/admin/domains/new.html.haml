@@ -1,0 +1,27 @@
+.col-xs-12
+  .content-panel
+    %h2.headline.yellowmountain Domain
+    %div
+      = form_for([:admin, :user, @domain]) do |f|
+
+        - unless @domain.errors.empty?
+          .alert.alert-error.alert-danger
+            %button.close{'data-dismiss' => 'alert', :type => 'button'} x
+            %ul
+              - @domain.errors.full_messages.each do |e|
+                %li= e
+
+
+        = f.hidden_field :owner_id, :value => current_user.id
+        = f.hidden_field :owner_type, :value => 'User'
+
+        .form-group
+          = f.label :name
+          = f.text_field :name, :class => 'form-control'
+
+        .form-group
+          = f.label :extension
+          = f.text_field :extension, :class => 'form-control'
+
+        .actions
+          = f.submit "Save", :class => 'btn btn-default'

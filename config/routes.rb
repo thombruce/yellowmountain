@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   require 'constraints/short_dispatcher'
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions", invitations: "users/invitations" }
   namespace :admin do
-    resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
+    resources :users do
+      resources :domains, :id => /[A-Za-z0-9\.\-]+/, only: [:index, :new, :edit, :create, :update, :destroy]
+      # note that you should /maybe/ also allow underscores in the above regex
+      resources :mailboxes, :id => /[A-Za-z0-9\.@\-\_]+/, only: [:index, :new, :edit, :create, :update, :destroy]
+    end
     resources :blog_posts, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :pages, only: [:index, :new, :edit, :create, :update, :destroy]
-    resources :domains, :id => /[A-Za-z0-9\.\-]+?/, only: [:index, :new, :edit, :create, :update, :destroy]
-    # note that you should /maybe/ also allow underscores in the above regex
-    resources :mailboxes, :id => /[A-Za-z0-9\.@\-\_]+?/, only: [:index, :new, :edit, :create, :update, :destroy]
     get '/' => 'dashboard#index'
   end
   resources :users, only: [:index, :show]

@@ -2,6 +2,8 @@ class Domain < ActiveRecord::Base
   belongs_to :owner, polymorphic: true
   has_many :mailboxes, :dependent => :destroy
 
+  validates :owner_id, :presence => true
+
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :finders]
   def slug_candidates

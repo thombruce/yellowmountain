@@ -1,7 +1,10 @@
 %tr
   %td
     %a.github{:href => edit_admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
-      %strong= user_counter + 1
+      - if params[:action] == 'edit'
+        %strong= user_counter + 1
+      - else
+        %strong 1
   %td
     %a.github{:href => edit_admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       - if user.profile
