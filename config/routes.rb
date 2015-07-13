@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :blog_posts, only: [:index, :new, :edit, :create, :update, :destroy]
     resources :pages, only: [:index, :new, :edit, :create, :update, :destroy]
+    resources :domains, :id => /[A-Za-z0-9\.\-]+?/, only: [:index, :new, :edit, :create, :update, :destroy]
+    # note that you should /maybe/ also allow underscores in the above regex
+    resources :mailboxes, :id => /[A-Za-z0-9\.@\-\_]+?/, only: [:index, :new, :edit, :create, :update, :destroy]
     get '/' => 'dashboard#index'
   end
   resources :users, only: [:index, :show]

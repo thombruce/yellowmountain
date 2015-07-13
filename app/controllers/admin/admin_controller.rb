@@ -6,6 +6,6 @@ class Admin::AdminController < ApplicationController
 
   private
   def authorize_user
-    redirect_to root_path unless current_user.has_any_role? :admin, :client
+    redirect_to root_path unless current_user.has_role? :admin
   end
 end

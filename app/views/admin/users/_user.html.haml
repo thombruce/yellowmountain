@@ -23,5 +23,9 @@
       - else
         %i ...
   %td
+    %a{:href => vanity_path(user.slug)}
+      %i.fa.fa-fw.fa-eye.blue
+    %a{:href => edit_admin_user_path(user.slug)}
+      %i.fa.fa-fw.fa-pencil.olive
     %a{:href => admin_user_path(user.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}
-      %i.fa.fa-trash-o.rubylang
+      %i.fa.fa-fw.fa-trash-o.rubylang

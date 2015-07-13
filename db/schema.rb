@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711192411) do
+ActiveRecord::Schema.define(version: 20150713192940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,28 @@ ActiveRecord::Schema.define(version: 20150711192411) do
 
   add_index "blog_posts", ["slug"], name: "index_blog_posts_on_slug", unique: true, using: :btree
   add_index "blog_posts", ["title"], name: "index_blog_posts_on_title", unique: true, using: :btree
+
+  create_table "domains", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "name"
+    t.string   "extension"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "domains", ["owner_type", "owner_id"], name: "index_domains_on_owner_type_and_owner_id", using: :btree
+
+  create_table "mailboxes", force: :cascade do |t|
+    t.integer  "domain_id"
+    t.string   "username"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "mailboxes", ["domain_id"], name: "index_mailboxes_on_domain_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string   "title"
@@ -116,4 +138,5 @@ ActiveRecord::Schema.define(version: 20150711192411) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "mailboxes", "domains"
 end
