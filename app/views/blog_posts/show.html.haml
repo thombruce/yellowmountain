@@ -6,7 +6,7 @@
   %meta{:property => 'og:image', :content => image_url('og-placeholder.png')}
 .col-xs-12.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
   .content-panel.bg-white
-    %article.post
+    %article.post.word-break
       %h2.headline.yellowmountain= @blog_post.title
       %h5
         = @blog_post.created_at.strftime("%B %d, %Y")
