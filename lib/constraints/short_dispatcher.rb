@@ -5,7 +5,7 @@ module Constraints
     end
     def call(env)
       id     = env["action_dispatch.request.path_parameters"][:id]
-      slug   = VanityUrl.find_by_slug(id)
+      slug   = VanityUrl.find_by_slug(id.downcase)
       Render.new(slug).call(@router, env)
     end
 
