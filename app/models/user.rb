@@ -21,6 +21,9 @@ class User < ActiveRecord::Base
   has_many :blog_posts, :dependent => :destroy
   has_many :pages, :dependent => :destroy
 
+  has_many :organizations, :dependent => :destroy
+  #accepts_nested_attributes_for :organization, :update_only => true
+
   has_many :domains, :as => :owner, :dependent => :destroy
 
   def full_name
