@@ -13,6 +13,10 @@
         .form-group
           = ff.label :bio
           = ff.text_area :bio, :class => 'form-control'
+      = f.fields_for :organizations, resource.organizations.build do |ff|
+        .form-group
+          = ff.label :organization_name
+          = ff.text_field :name, :class => 'form-control'
       .form-group
         = f.label :username
         = f.text_field :username, autofocus: true, :class => 'form-control'

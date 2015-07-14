@@ -26,6 +26,8 @@
             %th
         %tbody.bg-white
           = render @domains
+    .actions
+      %a.btn.btn-primary{:href => new_admin_user_domain_path(@user), :role => 'button'} New Domain
   .content-panel.bg-white
     %h3.yellowmountain.headline Other
     .table-responsive
@@ -45,3 +47,5 @@
             %th
         %tbody.bg-white
           = render @mailboxes
+    .actions
+      %a.btn.btn-primary{:href => '#', :role => 'button'} New Mailbox
