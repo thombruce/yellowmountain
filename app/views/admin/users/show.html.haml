@@ -1,5 +1,5 @@
 .col-xs-12
-  .content-panel
+  .content-panel.bg-white
     %h2.yellowmountain.headline User
     .table-responsive
       %table.table.table-hover
@@ -13,6 +13,9 @@
             %th
         %tbody.bg-white
           = render @user
+.col-xs-6
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Domains
     .table-responsive
       %table.table.table-hover
         %thead
@@ -23,3 +26,22 @@
             %th
         %tbody.bg-white
           = render @domains
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Other
+    .table-responsive
+      %table.table.table-hover
+        %thead
+        %tbody.bg-white
+.col-xs-6
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Mailboxes
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Username
+            %th Domain
+            %th
+        %tbody.bg-white
+          = render @mailboxes
