@@ -2,7 +2,7 @@
   .content-panel
     %h2.headline.yellowmountain Mailbox
     %div
-      = form_for([:admin, :user, :domain, @mailbox]) do |f|
+      = form_for([:admin, @mailbox]) do |f|
 
         - unless @mailbox.errors.empty?
           .alert.alert-error.alert-danger
@@ -11,13 +11,18 @@
               - @mailbox.errors.full_messages.each do |e|
                 %li= e
 
-        = f.hidden_field :domain_id, :value => @domain.id
-
-        .form-group
-          = f.label :username
-          .input-group
+        .form-inline
+          .form-group
+            = f.label :username
             = f.text_field :username, :class => 'form-control'
-            .input-group-addon= "@" + @domain.full
+          .form-group
+            = f.label '@'
+            = f.select :domain_id, current_user.domains.all.collect {|d| [ d.full, d.id ] }, {}, {:class => 'form-control'}
+
+
+          /.input-group
+          /= f.text_field :username, :class => 'form-control'
+          /.input-group-addon @#{@domain.full} // This for when domain is explicitly known!
 
         .actions
           = f.submit "Save", :class => 'btn btn-default'

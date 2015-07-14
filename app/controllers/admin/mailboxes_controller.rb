@@ -7,7 +7,7 @@ class Admin::MailboxesController < Admin::AdminController
 
   def new
     @mailbox = Mailbox.new
-    @domain = Domain.find(params[:domain_id])
+    #@domain = Domain.find(params[:domain_id])
   end
 
   def create
@@ -30,7 +30,7 @@ class Admin::MailboxesController < Admin::AdminController
 
   def edit
     @mailbox = Mailbox.find(params[:id])
-    @domain = Domain.find(params[:domain_id])
+    @domain = @mailbox.domain
     @user = @domain.owner
   end
 

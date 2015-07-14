@@ -14,6 +14,8 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //
+//= require angular
+//
 //= require bootstrap-sprockets
 //
 //= require three.min

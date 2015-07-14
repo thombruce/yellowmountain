@@ -2,7 +2,7 @@
   .content-panel
     %h2.headline.yellowmountain Domain
     %div
-      = form_for([:admin, :user, @domain]) do |f|
+      = form_for([:admin, @domain]) do |f|
 
         - unless @domain.errors.empty?
           .alert.alert-error.alert-danger
