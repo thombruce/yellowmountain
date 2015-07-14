@@ -1,3 +1,5 @@
 en-GB:
   hello: "'Allo guv"
-  organization: "Organisation"
+  organizations:
+    plural: "Organisations"
+    singular: "Organisation"
