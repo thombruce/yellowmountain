@@ -1,18 +1,16 @@
 .col-xs-12
   .content-panel.bg-white
-    %h2.yellowmountain.headline User
+    %h2.yellowmountain.headline= @user.full_name
+    %h3.yellowmountain.headline Organizations
     .table-responsive
       %table.table.table-hover
         %thead
           %tr
             %th #
             %th Name
-            %th Email
-            %th Bio
-            %th Roles
             %th
         %tbody.bg-white
-          = render @user
+          = render @organizations
 .col-xs-6
   .content-panel.bg-white
     %h3.yellowmountain.headline Domains
