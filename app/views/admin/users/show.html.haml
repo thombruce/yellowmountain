@@ -13,7 +13,7 @@
         %tbody.bg-white
           = render @organizations
     .actions
-      %a.btn.btn-primary{:href => '#', :role => 'button'} New Organization
+      %a.btn.btn-primary{:href => '#', :role => 'button'} New #{Organization.model_name.human}
 .col-xs-6
   .content-panel.bg-white
     %h3.yellowmountain.headline Domains
