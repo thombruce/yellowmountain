@@ -1,7 +1,8 @@
 .col-xs-12
   .content-panel.bg-white
     %h2.yellowmountain.headline= @user.full_name
-    %h3.yellowmountain.headline= t('organizations.plural')
+    /%h3.yellowmountain.headline= t('organization').pluralize
+    %h3.yellowmountain.headline= Organization.model_name.human.pluralize
     .table-responsive
       %table.table.table-hover
         %thead

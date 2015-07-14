@@ -1,5 +1,5 @@
 en-GB:
   hello: "'Allo guv"
-  organizations:
-    plural: "Organisations"
-    singular: "Organisation"
+  activerecord:
+    models:
+      organization: Organisation

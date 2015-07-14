@@ -21,10 +21,9 @@
 
 en:
   hello: "Hello world"
-  organizations:
-    plural: "Organizations"
-    singular: "Organization"
   activerecord:
+    models:
+      organization: Organization
     attributes:
       "user/profile":
         first_name: "First name"
