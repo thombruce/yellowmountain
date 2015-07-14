@@ -1,7 +1,7 @@
 .col-xs-12
   .content-panel.bg-white
     %h2.yellowmountain.headline= @user.full_name
-    %h3.yellowmountain.headline Organizations
+    %h3.yellowmountain.headline= t('organization')
     .table-responsive
       %table.table.table-hover
         %thead
@@ -11,6 +11,8 @@
             %th
         %tbody.bg-white
           = render @organizations
+    .actions
+      %a.btn.btn-primary{:href => '#', :role => 'button'} New Organization
 .col-xs-6
   .content-panel.bg-white
     %h3.yellowmountain.headline Domains
