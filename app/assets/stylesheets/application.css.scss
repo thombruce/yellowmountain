@@ -26,6 +26,11 @@
           hyphens: auto;
 }
 
+.form-group.required .form-label:after { 
+   content:"*";
+   color:$red;
+}
+
 html.turbolinks-progress-bar::before {
   background-color: $yellowmountain !important;
 }

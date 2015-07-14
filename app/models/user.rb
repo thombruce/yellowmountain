@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   has_many :pages, :dependent => :destroy
 
   has_many :organizations, :dependent => :destroy
-  accepts_nested_attributes_for :organizations, :update_only => true
+  accepts_nested_attributes_for :organizations, :update_only => true, reject_if: proc { |attributes| attributes['name'].blank? }
 
   has_many :domains, :as => :owner, :dependent => :destroy
 
