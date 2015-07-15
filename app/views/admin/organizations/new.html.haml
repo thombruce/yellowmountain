@@ -1,0 +1,22 @@
+.col-xs-12
+  .content-panel
+    %h2.headline.yellowmountain #{Organization.model_name.human}
+    %div
+      = form_for([:admin, @organization]) do |f|
+
+        - unless @organization.errors.empty?
+          .alert.alert-error.alert-danger
+            %button.close{'data-dismiss' => 'alert', :type => 'button'} x
+            %ul
+              - @organization.errors.full_messages.each do |e|
+                %li= e
+
+
+        = f.hidden_field :user_id, :value => current_user.id
+
+        .form-group
+          = f.label :name
+          = f.text_field :name, :class => 'form-control'
+
+        .actions
+          = f.submit "Save", :class => 'btn btn-default'

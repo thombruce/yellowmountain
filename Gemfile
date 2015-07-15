@@ -76,4 +76,4 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'dynamic_form' # Handles error messages - currently unused as we need a different HTML structure. Use as reference if you want to build a helper.
 
-gem 'angularjs-rails'
+gem 'angularjs-rails' # Not currently using - it's awesome, but it lacks immediate support for the actions I was looking for and I'd like to be sure things work without js before implementing it over the top.

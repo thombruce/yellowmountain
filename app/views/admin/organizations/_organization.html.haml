@@ -6,3 +6,7 @@
     %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
       = organization.name
   %td
+    %a{:href => edit_admin_organization_path(organization.slug)}
+      %i.fa.fa-fw.fa-pencil.olive
+    %a{:href => admin_organization_path(organization.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}
+      %i.fa.fa-fw.fa-trash-o.rubylang
