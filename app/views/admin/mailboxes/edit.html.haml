@@ -1,8 +1,8 @@
 .col-xs-12
   .content-panel
-    %h2.headline.yellowmountain Mailbox
+    %h2.headline.yellowmountain= @mailbox.address
     %div
-      = form_for([:admin, @user, @domain, @mailbox]) do |f|
+      = form_for([:admin, @mailbox]) do |f|
 
         - unless @mailbox.errors.empty?
           .alert.alert-error.alert-danger
@@ -10,12 +10,6 @@
             %ul
               - @mailbox.errors.full_messages.each do |e|
                 %li= e
-
-        .form-group
-          = f.label :username
-          .input-group
-            = f.text_field :username, :class => 'form-control'
-            .input-group-addon= "@" + @domain.full
 
         .actions
           = f.submit "Update", :class => 'btn btn-default'

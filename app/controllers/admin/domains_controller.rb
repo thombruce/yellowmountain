@@ -41,6 +41,6 @@ class Admin::DomainsController < Admin::AdminController
   private
 
   def domain_params
-    params.require(:domain).permit(:name,:extension,:owner_id,:owner_type)
+    params.require(:domain).permit(:name,:extension,:global_owner)
   end
 end

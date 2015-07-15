@@ -43,6 +43,6 @@ class Admin::MailboxesController < Admin::AdminController
   private
 
   def mailbox_params
-    params.require(:mailbox).permit(:username, :domain_id)
+    params.require(:mailbox).permit()
   end
 end

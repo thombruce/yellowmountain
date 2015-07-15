@@ -8,7 +8,7 @@ class Admin::UsersController < Admin::AdminController
   def show
     @user = User.find(params[:id])
     @organizations = @user.organizations
-    @domains = @user.domains
+    @domains = @user.domains + Domain.where({owner: @organizations})
     @mailboxes = Mailbox.where({ domain: @domains })
   end
 

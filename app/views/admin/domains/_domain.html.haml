@@ -9,6 +9,9 @@
     %a.github{:href => edit_admin_domain_path(domain.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = domain.extension
   %td
+    %a.github{:href => edit_admin_domain_path(domain.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = domain.owner.name
+  %td
     %a{:href => edit_admin_domain_path(domain.slug)}
       %i.fa.fa-fw.fa-pencil.olive
     %a{:href => admin_domain_path(domain.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}

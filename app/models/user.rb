@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
     "#{profile.first_name} #{profile.last_name}"
   end
 
+  def name
+    full_name
+  end
+
   def should_generate_new_friendly_id?
     slug.blank? || username_changed?
   end

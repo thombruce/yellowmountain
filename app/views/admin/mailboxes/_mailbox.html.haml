@@ -9,6 +9,9 @@
     %a.github{:href => edit_admin_mailbox_path(mailbox.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = "@" + mailbox.domain.full
   %td
+    %a.github{:href => edit_admin_mailbox_path(mailbox.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = mailbox.domain.owner.name
+  %td
     %a{:href => edit_admin_mailbox_path(mailbox.slug)}
       %i.fa.fa-fw.fa-pencil.olive
     %a{:href => admin_mailbox_path(mailbox.slug), 'data-method' => 'delete', :rel => 'nofollow', 'data-confirm' => 'Are you sure?'}

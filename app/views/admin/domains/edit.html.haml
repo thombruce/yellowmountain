@@ -1,8 +1,8 @@
 .col-xs-12
   .content-panel
-    %h2.headline.yellowmountain Domain
+    %h2.headline.yellowmountain= @domain.full
     %div
-      = form_for([:admin, @user, @domain]) do |f|
+      = form_for([:admin, @domain]) do |f|
 
         - unless @domain.errors.empty?
           .alert.alert-error.alert-danger
@@ -11,8 +11,9 @@
               - @domain.errors.full_messages.each do |e|
                 %li= e
 
-        = f.hidden_field :owner_id, :value => current_user.id
-        = f.hidden_field :owner_type, :value => 'User'
+        .form-group
+          = f.label :owner
+          = f.grouped_collection_select :global_owner, [User, Organization], :all, :model_name, :to_global_id, :name
 
         .form-group
           = f.label :name
