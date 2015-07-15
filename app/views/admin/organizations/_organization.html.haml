@@ -5,6 +5,12 @@
   %td
     %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
       = organization.name
+  %td.text-center
+    %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
+      = organization.domains.count
+  %td.text-center
+    %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
+      = Mailbox.where({domain: organization.domains}).all.count
   %td
     %a{:href => edit_admin_organization_path(organization.slug)}
       %i.fa.fa-fw.fa-pencil.olive

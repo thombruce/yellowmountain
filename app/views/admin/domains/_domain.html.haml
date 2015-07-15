@@ -8,6 +8,9 @@
   %td
     %a.github{:href => edit_admin_domain_path(domain.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = domain.owner.name
+  %td.text-center
+    %a.github{:href => edit_admin_domain_path(domain.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = domain.mailboxes.count
   %td
     %a{:href => edit_admin_domain_path(domain.slug)}
       %i.fa.fa-fw.fa-pencil.olive

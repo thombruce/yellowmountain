@@ -19,6 +19,15 @@
         = truncate(user.profile.bio, length: 30)
       - else
         %i ...
+  %td.text-center
+    %a.github{:href => admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = user.organizations.count
+  %td.text-center
+    %a.github{:href => admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = user.domains.count + Domain.where({owner: user.organizations}).all.count
+  %td.text-center
+    %a.github{:href => admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+      = Mailbox.where({domain: user.domains}).all.count + Mailbox.where({domain: Organization.where({owner: user}).all}).all.count
   %td
     %a.github{:href => admin_user_path(user.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       - if user.roles.any?
