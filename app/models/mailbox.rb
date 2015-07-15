@@ -1,4 +1,5 @@
 class Mailbox < ActiveRecord::Base
+  resourcify
   belongs_to :domain
 
   extend FriendlyId

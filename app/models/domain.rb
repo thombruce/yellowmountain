@@ -1,4 +1,5 @@
 class Domain < ActiveRecord::Base
+  resourcify
   belongs_to :owner, polymorphic: true
   has_many :mailboxes, :dependent => :destroy
 
