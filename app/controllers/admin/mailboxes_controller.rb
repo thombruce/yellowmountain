@@ -8,6 +8,8 @@ class Admin::MailboxesController < Admin::AdminController
   def new
     @mailbox = Mailbox.new
     #@domain = Domain.find(params[:domain_id])
+    @domains = current_user.domains + Domain.where({owner: current_user.organizations})
+    # This needs refactoring to account for attaching mailboxes to other users and their organizations.
   end
 
   def create

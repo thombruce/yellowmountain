@@ -17,7 +17,7 @@
             = f.text_field :username, :class => 'form-control'
           .form-group
             = f.label '@'
-            = f.select :domain_id, current_user.domains.all.collect {|d| [ d.full, d.id ] }, {}, {:class => 'form-control'}
+            = f.select :domain_id, @domains.collect {|d| [ d.full, d.id ] }, {}, {:class => 'form-control'}
 
 
           /.input-group
