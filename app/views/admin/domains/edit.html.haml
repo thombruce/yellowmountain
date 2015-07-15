@@ -13,7 +13,7 @@
 
         .form-group
           = f.label :owner
-          = f.grouped_collection_select :global_owner, [User, Organization], :all, :model_name, :to_global_id, :name
+          = f.grouped_collection_select :global_owner, [User, Organization], :all, :human_name, :to_global_id, :name
 
         .form-group
           = f.label :name

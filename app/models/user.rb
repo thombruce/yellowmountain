@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessor :login
+  include HumanizeName
   include VanitizeUrl
+
+  attr_accessor :login
   default_scope -> { order('users.created_at DESC') }
+
   rolify
   extend FriendlyId
   friendly_id :username, use: [:slugged, :finders]

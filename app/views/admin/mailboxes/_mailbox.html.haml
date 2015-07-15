@@ -4,10 +4,7 @@
       %strong= mailbox_counter + 1
   %td
     %a.github{:href => edit_admin_mailbox_path(mailbox.slug), :style => 'display:block;margin:-8px;padding:8px;'}
-      = mailbox.username
-  %td
-    %a.github{:href => edit_admin_mailbox_path(mailbox.slug), :style => 'display:block;margin:-8px;padding:8px;'}
-      = "@" + mailbox.domain.full
+      = mailbox.address
   %td
     %a.github{:href => edit_admin_mailbox_path(mailbox.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = mailbox.domain.owner.name
