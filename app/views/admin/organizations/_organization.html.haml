@@ -7,7 +7,7 @@
       = organization.name
   %td.text-center
     %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
-      = 1 if organization.user # because we haven't yet added a 'members' set/resource
+      = 1 if organization.owner # because we haven't yet added a 'members' set/resource
   %td.text-center
     %a.github{:href => '#', :style => 'display:block;margin:-8px;padding:8px;'}
       = organization.domains.count
