@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions", invitations: "users/invitations" }
   namespace :admin do
     resources :users
-    resources :organizations, only: [:index, :new, :edit, :create, :update, :destroy]
+    resources :organizations
     resources :domains, :id => /[^\/]+/, only: [:index, :new, :edit, :create, :update, :destroy]
     # /[A-Za-z0-9\.\-]+/ # an underscores?
     resources :mailboxes, :id => /[^\/]+/, only: [:index, :new, :edit, :create, :update, :destroy]

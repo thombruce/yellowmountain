@@ -1,0 +1,64 @@
+.col-xs-12
+  .content-panel.bg-white
+    %h2.yellowmountain.headline= @organization.name
+    /%h3.yellowmountain.headline= t('organization').pluralize
+    %h3.yellowmountain.headline Members
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Email
+            %th Bio
+            %th.text-center
+              %i.fa.fa-briefcase
+            %th.text-center
+              %i.fa.fa-server
+            %th.text-center
+              %i.fa.fa-envelope
+            %th Roles
+            %th
+        %tbody.bg-white
+          - @user = @organization.owner
+          = render @user
+    .actions
+      %a.btn.btn-primary{:href => new_admin_user_path, :role => 'button'} New User
+.col-xs-6
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Domains
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Owner
+            %th.text-center
+              %i.fa.fa-envelope
+            %th
+        %tbody.bg-white
+          = render @domains
+    .actions
+      %a.btn.btn-primary{:href => new_admin_domain_path, :role => 'button'} New Domain
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Other
+    .table-responsive
+      %table.table.table-hover
+        %thead
+        %tbody.bg-white
+.col-xs-6
+  .content-panel.bg-white
+    %h3.yellowmountain.headline Mailboxes
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Username
+            %th Owner
+            %th
+        %tbody.bg-white
+          = render @mailboxes
+    .actions
+      %a.btn.btn-primary{:href => new_admin_mailbox_path, :role => 'button'} New Mailbox

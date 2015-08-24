@@ -5,6 +5,12 @@ class Admin::OrganizationsController < Admin::AdminController
     @organizations = Domain.all
   end
 
+  def show
+    @organization = Organization.find(params[:id])
+    @domains = @organization.domains
+    @mailboxes = Mailbox.where({ domain: @domains })
+  end
+
   def new
     @organization = Organization.new
   end
