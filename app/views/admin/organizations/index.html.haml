@@ -1,0 +1,19 @@
+.col-xs-12
+  .content-panel
+    %h2.yellowmountain.headline= Organization.human_name.pluralize
+    .table-responsive
+      %table.table.table-hover
+        %thead
+          %tr
+            %th #
+            %th Name
+            %th Owner
+            %th.text-center
+              %i.fa.fa-users
+            %th.text-center
+              %i.fa.fa-server
+            %th.text-center
+              %i.fa.fa-envelope
+            %th
+        %tbody.bg-white
+          = render @organizations

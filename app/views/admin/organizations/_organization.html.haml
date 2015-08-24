@@ -5,6 +5,16 @@
   %td
     %a.github{:href => admin_organization_path(organization.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = organization.name
+      - unless controller_name == 'organizations'
+        %small
+          - if organization.owner == @user
+            (Owner)
+          - else
+            (Member)
+  - if controller_name == 'organizations'
+    %td
+      %a.github{:href => admin_organization_path(organization.slug), :style => 'display:block;margin:-8px;padding:8px;'}
+        = organization.owner.full_name
   %td.text-center
     %a.github{:href => admin_organization_path(organization.slug), :style => 'display:block;margin:-8px;padding:8px;'}
       = 1 if organization.owner # because we haven't yet added a 'members' set/resource

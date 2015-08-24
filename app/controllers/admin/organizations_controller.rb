@@ -2,7 +2,7 @@ class Admin::OrganizationsController < Admin::AdminController
   load_and_authorize_resource
 
   def index
-    @organizations = Domain.all
+    @organizations = Organization.all
   end
 
   def show
