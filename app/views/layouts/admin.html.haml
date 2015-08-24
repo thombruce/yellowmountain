@@ -28,6 +28,8 @@
             = link_to 'Pages', admin_pages_path
           %li{:class => "#{'active' if controller_name == 'users'}"}
             = link_to 'Users', admin_users_path
+          %li{:class => "#{'active' if controller_name == 'organizations'}"}
+            = link_to Organization.human_name.pluralize, admin_organizations_path
           %li{:class => "#{'active' if controller_name == 'settings'}"}
             = link_to 'Settings', '#'
     .container-fluid
@@ -50,6 +52,12 @@
             = link_to 'View all', admin_users_path
           %li{:class => "#{'active' if current_page?(new_admin_user_path)}"}
             = link_to 'New User', new_admin_user_path # new_user_invitation_path
+        %h3.headline.github{:class => "#{'active yellowmountain' if controller_name == 'organizations'}"}= Organization.human_name.pluralize
+        %ul.nav.nav-sidebar
+          %li{:class => "#{'active' if current_page?(admin_organizations_path)}"}
+            = link_to 'View all', admin_organizations_path
+          %li{:class => "#{'active' if current_page?(new_admin_organization_path)}"}
+            = link_to 'New ' + Organization.human_name, new_admin_organization_path # new_user_invitation_path
         %h3.headline.github Settings
         %ul.nav.nav-sidebar
           %li
