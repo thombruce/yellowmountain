@@ -1,23 +1,29 @@
 .navbar.navbar-static-top.navbar-default
   .container-fluid.text-center
-    %ul.nav.navbar-nav
-      %li
-        %a{'href' => root_path, 'title' => 'Home'} Home
-      - unless Page.where(:slug => 'about').empty?
+    .navbar-header
+      %button.navbar-toggle.collapsed{'type' => 'button', 'data-toggle' => 'collapse', 'data-target' => '#collapse-1', 'aria-expanded' => 'false', 'style' => 'float:none;'}
+        %span.sr-only Toggle navigation
+        %span Menu
+        %i.fa.fa-bars
+    .collapse.navbar-collapse#collapse-1
+      %ul.nav.navbar-nav
         %li
-          %a{'href' => vanity_path('about'), 'title' => 'About Us'} About
-      - unless Page.where(:slug => 'our-work').empty?
+          %a{'href' => root_path, 'title' => 'Home'} Home
+        - unless Page.where(:slug => 'about').empty?
+          %li
+            %a{'href' => vanity_path('about'), 'title' => 'About Us'} About
+        - unless Page.where(:slug => 'our-work').empty?
+          %li
+            %a{'href' => vanity_path('our-work'), 'title' => 'Our Work'} Our Work
+        - unless Page.where(:slug => 'contact').empty?
+          %li
+            %a{'href' => vanity_path('contact'), 'title' => 'Contact Us'} Contact
         %li
-          %a{'href' => vanity_path('our-work'), 'title' => 'Our Work'} Our Work
-      - unless Page.where(:slug => 'contact').empty?
-        %li
-          %a{'href' => vanity_path('contact'), 'title' => 'Contact Us'} Contact
-      %li
-        %a{'href' => blog_posts_path, 'title' => 'content'} Blog
-      - if user_signed_in? && current_user.has_role?(:admin)
-        .navbar-text
-          |
-        %li
-          %a{'href' => admin_path, 'title' => 'content'} Admin
-    .nav.navbar-text.temporary.hidden
-      Building Mountains. Come back soon.
+          %a{'href' => blog_posts_path, 'title' => 'content'} Blog
+        - if user_signed_in? && current_user.has_role?(:admin)
+          .navbar-text
+            |
+          %li
+            %a{'href' => admin_path, 'title' => 'content'} Admin
+      .nav.navbar-text.temporary.hidden
+        Building Mountains. Come back soon.
