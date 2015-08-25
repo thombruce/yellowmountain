@@ -7,7 +7,7 @@
         %i.fa.fa-bars
     .collapse.navbar-collapse#collapse-1
       %ul.nav.navbar-nav
-        %li
+        %li.hidden-xs
           %a{'href' => root_path, 'title' => 'Home'} Home
         - unless Page.where(:slug => 'about').empty?
           %li
@@ -21,8 +21,9 @@
         %li
           %a{'href' => blog_posts_path, 'title' => 'content'} Blog
         - if user_signed_in? && current_user.has_role?(:admin)
-          .navbar-text
+          .navbar-text.hidden-xs
             |
+          %hr.visible-xs
           %li
             %a{'href' => admin_path, 'title' => 'content'} Admin
       .nav.navbar-text.temporary.hidden
