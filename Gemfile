@@ -64,7 +64,7 @@ gem "rolify"
 gem "cancancan"
 
 gem 'friendly_id'
-# gem 'paperclip'
+gem 'paperclip'
 # gem 'paperclip-dropbox'
 # gem 'chartkick'
 # gem 'mail_form'
