@@ -7,8 +7,12 @@
         %i.fa.fa-bars
     .collapse.navbar-collapse#collapse-1
       %ul.nav.navbar-nav
-        %li.hidden-xs
-          %a{'href' => root_path, 'title' => 'Home'} Home
+        - if current_page?(root_url)
+          %li.hidden-xs
+            %a{'href' => root_path, 'title' => 'Home'} Home
+        - else
+          %li
+            %a{'href' => root_path, 'title' => 'Home'} Home
         - unless Page.where(:slug => 'about').empty?
           %li
             %a{'href' => vanity_path('about'), 'title' => 'About Us'} About
