@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'dotenv-rails', group: [:development, :test]
 
 gem "haml", '4.0.5'
 gem "haml-rails", '0.5.3', :group => :development
