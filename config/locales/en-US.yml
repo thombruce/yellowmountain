@@ -1,0 +1,5 @@
+en-GB:
+  hello: "Howdy partner"
+  activerecord:
+    models:
+      organization: Organization
