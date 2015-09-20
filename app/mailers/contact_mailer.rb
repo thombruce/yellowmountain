@@ -8,6 +8,12 @@ class ContactMailer < ApplicationMailer
   def contact_form(email)
     @email = email
 
-    mail to: "support@yellowmountain.io", from: "#{email.name} <#{email.email}>", subject: 'YM Contact | ' + email.subject
+    if Rails.env.development?
+      mail_to = ENV["EMAIL"]
+    else
+      mail_to = "support@yellowmountain.io"
+    end
+
+    mail to: mail_to, from: "#{email.name} <#{email.email}>", subject: 'YM Contact | ' + email.subject
   end
 end
