@@ -46,12 +46,12 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: "secure.emailsrvr.com",
-    port: 465,
-    domain: ENV["EMAIL_DOMAIN"],
-    authentication: :login,
-    tls: true,
-    user_name: ENV["EMAIL_USERNAME"],
-    password: ENV["EMAIL_PASSWORD"]
+    address: ENV["SMTP_ADDRESS"],
+    port: 587,
+    domain: ENV["DOMAIN"],
+    authentication: :plain,
+    enable_starttls_auto: true,
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"]
   }
 end
