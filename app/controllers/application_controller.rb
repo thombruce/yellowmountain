@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  Haml::Template.options[:format] = :html5
   before_filter :set_locale
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
