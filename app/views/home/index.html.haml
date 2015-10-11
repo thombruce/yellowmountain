@@ -16,14 +16,14 @@
       %h2.black.headline Client sign in
       = form_tag session_path(:user) do
         .form-group
-          %label{:for => 'login-login-input'} Login
-          = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input'}
+          %label{:for => 'login-login-input-xs'} Login
+          = text_field_tag 'user[login]', '', {:class => 'form-control', :id => 'login-login-input-xs'}
         .form-group
-          %label{:for => 'login-password-input'} Password
-          = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input'}
+          %label{:for => 'login-password-input-xs'} Password
+          = password_field_tag 'user[password]', '', {:class => 'form-control', :id => 'login-password-input-xs'}
         .checkbox
           %label
-            = check_box_tag 'user[remember_me]'
+            = check_box_tag 'user[remember_me]', '1', false, {:id => 'login-remember_me-checkbox-xs'}
             Remember me
         %button.btn.btn-default{:type => 'submit'} Sign in
         .small.text-center{:style => 'padding-top:15px;'}
