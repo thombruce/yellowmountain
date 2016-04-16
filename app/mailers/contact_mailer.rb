@@ -11,7 +11,7 @@ class ContactMailer < ApplicationMailer
     if Rails.env.development?
       mail_to = ENV["EMAIL"]
     else
-      mail_to = "thom@thombruce.com"
+      mail_to = "thomfilms@gmail.com"
     end
 
     mail to: mail_to, from: "#{email.name} <#{email.email}>", subject: 'YM Contact | ' + email.subject
