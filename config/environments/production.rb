@@ -58,8 +58,8 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = 'cdn.yellowmountain.io'
-  config.action_mailer.asset_host = 'http://cdn.yellowmountain.io'
+  #config.action_controller.asset_host = 'cdn.yellowmountain.io'
+  #config.action_mailer.asset_host = 'http://cdn.yellowmountain.io'
   #config.asset_host = 'cdn.yellowmountain.io'
 
   # Ignore bad email addresses and do not raise email delivery errors.
